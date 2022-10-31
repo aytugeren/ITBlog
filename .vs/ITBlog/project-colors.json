@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3756ce20-96d4-475c-b739-f4a0510e6439": {
+      "ProjectGuid": "3756ce20-96d4-475c-b739-f4a0510e6439",
+      "DisplayName": "ITBlog.Entities",
+      "ColorIndex": 0
+    },
+    "73f0c06a-e660-479b-8564-19971c03a5b3": {
+      "ProjectGuid": "73f0c06a-e660-479b-8564-19971c03a5b3",
+      "DisplayName": "ITBlog.DataAccess",
+      "ColorIndex": 1
+    },
+    "e3ed3997-7383-42e2-bf92-a22708d74911": {
+      "ProjectGuid": "e3ed3997-7383-42e2-bf92-a22708d74911",
+      "DisplayName": "ITBlog.Business",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

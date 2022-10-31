@@ -1,0 +1,17 @@
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net6.0\ITBlog.DataAccess.deps.json
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net6.0\ITBlog.DataAccess.runtimeconfig.json
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net6.0\ITBlog.DataAccess.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net6.0\ITBlog.DataAccess.pdb
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net6.0\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net6.0\ITBlog.Entities.pdb
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.csproj.AssemblyReference.cache
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.AssemblyInfoInputs.cache
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.AssemblyInfo.cs
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.csproj.CopyComplete
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ref\ITBlog.DataAccess.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.pdb
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\ITBlog.DataAccess.genruntimeconfig.cache
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net6.0\refint\ITBlog.DataAccess.dll
