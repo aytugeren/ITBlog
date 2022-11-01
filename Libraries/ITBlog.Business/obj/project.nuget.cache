@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VzA0ox/vNtclBR2XWXGXs5TA0inaC0lkfb6FFKjBPaXtimcqELPwiaetOqvhyVifZS23Z5j3JdXRKmAYQJgtYA==",
+  "dgSpecHash": "5MaHBI0WyY2ikK7nRVysG/pqi4mZeqIE5lKKlmDg4MZDxgCcoxfzRS6VPAEYov33hwuDTMDzPczH5E4vi0eoXg==",
   "success": true,
   "projectFilePath": "D:\\VisualStudio\\Projects\\ASP.NET Core-Blog\\ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\aytug\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\aytug\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

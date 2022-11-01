@@ -5,7 +5,6 @@ namespace ITBlog.Entities.Concrete
 {
     public class Category : BaseEntity
     {
-
         public Category()
         {
             this.Posts = new HashSet<Post>();
