@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Footer\" />
     <Folder Include="wwwroot\demos\travel\js\" />
   </ItemGroup>
 

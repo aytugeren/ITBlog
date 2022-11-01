@@ -4,6 +4,7 @@ using ITBlog.DataAccess.ContextFolder;
 using ITBlog.DataAccess.RepositoryFolder;
 using ITBlog.Business.CategoryServiceFolder;
 using ITBlog.Business.PictureServiceFolder;
+using ITBlog.Business.FooterServiceFolder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Services.AddTransient<ITBlogContext>();
 builder.Services.AddTransient(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IPictureService, PictureService>();
+builder.Services.AddTransient<IFooterService, FooterService>();
 
 var app = builder.Build();
 
