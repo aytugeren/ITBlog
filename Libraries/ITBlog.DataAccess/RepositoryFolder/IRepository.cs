@@ -1,4 +1,6 @@
-﻿namespace ITBlog.DataAccess.RepositoryFolder
+﻿using System.Linq.Expressions;
+
+namespace ITBlog.DataAccess.RepositoryFolder
 {
     public partial interface IRepository<T> where T : class, new()
     {
@@ -55,5 +57,12 @@
         /// To make linq oparation in datas
         /// </summary>
         IQueryable<T> Table { get; }
+
+        /// <summary>
+        /// To Query Filter
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        List<T> Query(Expression<Func<T, bool>> predicate);
     }
 }

@@ -1,0 +1,35 @@
+﻿@model List<ITBlog.Business.DTO.PictureDTO>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+		<section id="slider" class="slider-element swiper_wrapper min-vh-75">
+			<div class="slider-inner">
+
+				<div class="swiper-container swiper-parent">
+					<div class="swiper-wrapper">
+						@if (Model != null){
+							@foreach (var item in Model)
+							{
+						<div class="swiper-slide dark">
+							<div class="container">
+								<div class="slider-caption slider-caption-center">
+									<h2 data-animate="fadeInUp">@Html.Raw(item.PictureTitle)</h2>
+									<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">@Html.Raw(item.PictureContent)</p>
+								</div>
+							</div>
+							<div class="swiper-slide-bg" style="background-image: url('@item.PictureUrl');"></div>
+						</div>
+					}
+						}
+
+					</div>
+					<div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+					<div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
+					<div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div>
+				</div>
+
+			</div>
+		</section>

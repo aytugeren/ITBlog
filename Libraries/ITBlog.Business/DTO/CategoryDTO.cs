@@ -19,6 +19,13 @@ namespace ITBlog.Business.DTO
 
         public Guid? ParentCategoryId { get; set; }
 
+        public string? CategoryPlace { get; set; }
+
+        public string? CategoryUrl { get; set; }
+
+        public string? CategorySeoName { get; set; }
+
+
         public virtual ICollection<PostDTO> Posts { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -176,6 +177,9 @@ namespace ITBlog.DataAccess.RepositoryFolder
         /// Gets a Table
         /// </summary>
         public IQueryable<T> Table { get { return this.Entities; } }
+
+        public virtual List<T> Query(Expression<Func<T, bool>> predicate) { return this.Entities.Where(predicate).ToList(); }
+
         #endregion
 
     }

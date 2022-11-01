@@ -1,0 +1,39 @@
+﻿@model Dictionary<ITBlog.Business.DTO.CategoryDTO, List<ITBlog.Business.DTO.CategoryDTO>>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- Primary Navigation
+============================================= -->
+<nav class="primary-menu">
+
+    <ul class="menu-container">
+        @if (Model != null)
+        {
+            @foreach (var mainCategory in Model)
+            {
+                <li class="menu-item">
+                    <a class="menu-link" href="@mainCategory.Key.CategoryUrl"><div>@Html.Raw(mainCategory.Key.CategoryName)</div></a>
+
+                @if (mainCategory.Value != null)
+                {
+                    @if(mainCategory.Value.Count > 0){
+                        <ul class="sub-menu-container">
+                            @foreach (var subCategory in mainCategory.Value)
+                            {
+                                <li class="menu-item">
+                                    <a class="menu-link" href="@subCategory.CategoryUrl"><div>@subCategory.CategoryName</div></a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                }
+                </li>
+            }
+        }
+    </ul>
+
+</nav><!-- #primary-menu end -->

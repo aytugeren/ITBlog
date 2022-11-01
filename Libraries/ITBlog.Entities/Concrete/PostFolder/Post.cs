@@ -1,5 +1,6 @@
 ﻿using ITBlog.Entities.Concrete.AuthorFolder;
 using ITBlog.Entities.Concrete.EntityFolder;
+using ITBlog.Entities.Concrete.PictureFolder;
 
 namespace ITBlog.Entities.Concrete.PostFolder
 {
@@ -19,6 +20,9 @@ namespace ITBlog.Entities.Concrete.PostFolder
         public Guid AuthorId { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
+
+        public virtual ICollection<Picture> Pictures { get; set; }
+
         public Author Author { get; set; }
     }
 }

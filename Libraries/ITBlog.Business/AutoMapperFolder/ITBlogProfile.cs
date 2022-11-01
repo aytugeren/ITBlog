@@ -2,6 +2,7 @@
 using ITBlog.Business.DTO;
 using ITBlog.Entities.Concrete;
 using ITBlog.Entities.Concrete.AuthorFolder;
+using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PostFolder;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace ITBlog.Business.AutoMapperFolder
                 cfg.CreateMap<AuthorDTO, Author>().ReverseMap();
                 cfg.CreateMap<PostDTO, Post>().ReverseMap();
                 cfg.CreateMap<CategoryDTO, Category>().ReverseMap();
+                cfg.CreateMap<PictureDTO, Picture>().ReverseMap();
             });
 
             return mapperConfiguration;

@@ -1,4 +1,5 @@
 ﻿using ITBlog.Entities.Concrete.EntityFolder;
+using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PostFolder;
 
 namespace ITBlog.Entities.Concrete.AuthorFolder
@@ -23,5 +24,7 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
         public string? AuthorRole { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
+
+        public virtual ICollection<Picture> Pictures { get; set; }
     }
 }

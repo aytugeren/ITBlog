@@ -22,6 +22,21 @@ namespace ITBlog.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("AuthorPicture", b =>
+                {
+                    b.Property<Guid>("AuthorsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PicturesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AuthorsId", "PicturesId");
+
+                    b.HasIndex("PicturesId");
+
+                    b.ToTable("AuthorPicture");
+                });
+
             modelBuilder.Entity("CategoryPost", b =>
                 {
                     b.Property<Guid>("CategoriesId")
@@ -61,7 +76,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 31, 15, 20, 13, 368, DateTimeKind.Utc).AddTicks(3280));
+                        .HasDefaultValue(new DateTime(2022, 11, 1, 11, 25, 25, 430, DateTimeKind.Utc).AddTicks(441));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -93,10 +108,19 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CategoryPlace")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategorySeoName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CategoryUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 31, 18, 20, 13, 368, DateTimeKind.Local).AddTicks(2380));
+                        .HasDefaultValue(new DateTime(2022, 11, 1, 14, 25, 25, 429, DateTimeKind.Local).AddTicks(9340));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -122,6 +146,65 @@ namespace ITBlog.DataAccess.Migrations
                     b.ToTable("tblCategory", (string)null);
                 });
 
+            modelBuilder.Entity("ITBlog.Entities.Concrete.PictureFolder.Picture", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 1, 11, 25, 25, 430, DateTimeKind.Utc).AddTicks(2387));
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("PictureAltName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureExtension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureFilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PicturePlace")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Width")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tblPicture", (string)null);
+                });
+
             modelBuilder.Entity("ITBlog.Entities.Concrete.PostFolder.Post", b =>
                 {
                     b.Property<Guid>("Id")
@@ -134,7 +217,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 31, 15, 20, 13, 368, DateTimeKind.Utc).AddTicks(1179));
+                        .HasDefaultValue(new DateTime(2022, 11, 1, 11, 25, 25, 429, DateTimeKind.Utc).AddTicks(8153));
 
                     b.Property<string>("FirstContent")
                         .HasColumnType("nvarchar(max)");
@@ -165,6 +248,36 @@ namespace ITBlog.DataAccess.Migrations
                     b.ToTable("tblPost", (string)null);
                 });
 
+            modelBuilder.Entity("PicturePost", b =>
+                {
+                    b.Property<Guid>("PicturesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PostsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PicturesId", "PostsId");
+
+                    b.HasIndex("PostsId");
+
+                    b.ToTable("PicturePost");
+                });
+
+            modelBuilder.Entity("AuthorPicture", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Author", null)
+                        .WithMany()
+                        .HasForeignKey("AuthorsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ITBlog.Entities.Concrete.PictureFolder.Picture", null)
+                        .WithMany()
+                        .HasForeignKey("PicturesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CategoryPost", b =>
                 {
                     b.HasOne("ITBlog.Entities.Concrete.Category", null)
@@ -189,6 +302,21 @@ namespace ITBlog.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("PicturePost", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.PictureFolder.Picture", null)
+                        .WithMany()
+                        .HasForeignKey("PicturesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ITBlog.Entities.Concrete.PostFolder.Post", null)
+                        .WithMany()
+                        .HasForeignKey("PostsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorFolder.Author", b =>

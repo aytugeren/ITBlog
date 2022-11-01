@@ -10,3 +10,10 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\refint\ITBlog.Business.dll
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ref\ITBlog.Business.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Entities.pdb
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.csproj.CopyComplete
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Business.runtimeconfig.json
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.DataAccess.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.DataAccess.pdb
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.genruntimeconfig.cache
