@@ -1,4 +1,7 @@
-﻿using ITBlog.Entities.Concrete.EntityFolder;
+﻿using ITBlog.Entities.Concrete.CategoryPlaceFolder;
+using ITBlog.Entities.Concrete.EntityFolder;
+using ITBlog.Entities.Concrete.PlaceFolder;
+using ITBlog.Entities.Concrete.PostCategoryFolder;
 using ITBlog.Entities.Concrete.PostFolder;
 
 namespace ITBlog.Entities.Concrete
@@ -7,7 +10,8 @@ namespace ITBlog.Entities.Concrete
     {
         public Category()
         {
-            this.Posts = new HashSet<Post>();
+            this.Posts = new HashSet<PostCategory>();
+            this.Places = new HashSet<CategoryPlace>();
         }
 
         public string? CategoryName { get; set; }
@@ -22,6 +26,8 @@ namespace ITBlog.Entities.Concrete
 
         public string? CategorySeoName { get; set; }
 
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<PostCategory> Posts { get; set; }
+
+        public virtual ICollection<CategoryPlace> Places { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace ITBlog.Business.CategoryServiceFolder
             var listOfCategories = new Dictionary<CategoryDTO, List<CategoryDTO>>();
             if (!string.IsNullOrEmpty(placeName))
             {
-                var result = _categoryRepository.Query(x => x.CategoryPlace == placeName);
+                var result = _categoryRepository.Query(x => x.CategoryPlace == placeName, string.Empty);
                 var subCategories = result.Where(x => x.ParentCategoryId != null);
 
                 foreach (var item in result)

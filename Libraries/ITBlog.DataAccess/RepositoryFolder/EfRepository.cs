@@ -161,7 +161,7 @@ namespace ITBlog.DataAccess.RepositoryFolder
         /// <summary>
         /// Set Entities
         /// </summary>
-        protected virtual DbSet<T> Entities
+        protected virtual Microsoft.EntityFrameworkCore.DbSet<T> Entities
         {
             get
             {
@@ -178,7 +178,50 @@ namespace ITBlog.DataAccess.RepositoryFolder
         /// </summary>
         public IQueryable<T> Table { get { return this.Entities; } }
 
-        public virtual List<T> Query(Expression<Func<T, bool>> predicate) { return this.Entities.Where(predicate).ToList(); }
+        public virtual List<T> Query(Expression<Func<T, bool>> predicate, string includedProperties)
+        {
+            if (predicate == null && !string.IsNullOrEmpty(includedProperties))
+            {
+                if (includedProperties.Contains('|'))
+                {
+                    var resultEntities = this.Entities;
+                    var splittedInclude = includedProperties.Split('|');
+                    foreach (var item in splittedInclude)
+                    {
+                        resultEntities.Include(item);
+                    }
+
+                    return resultEntities.ToList();
+                }
+                return this.Entities.Include(includedProperties).ToList();
+            }
+            else if (predicate != null && !string.IsNullOrEmpty(includedProperties) && includedProperties.Contains('|'))
+            {
+                var resultEntities = this.Entities;
+                var splittedInclude = includedProperties.Split('|');
+                foreach (var item in splittedInclude)
+                {
+                    try
+                    {
+                        resultEntities.Include(item).ToList().AsQueryable();
+                    }
+                    catch (Exception ex)
+                    {
+                        continue;
+                    }
+                }
+
+                return resultEntities.ToList();
+            }
+            else if (!string.IsNullOrEmpty(includedProperties))
+            {
+                return this.Entities.Where(predicate).Include(includedProperties).ToList();
+            }
+            else
+            {
+                return this.Entities.Where(predicate).ToList();
+            }
+        }
 
         #endregion
 

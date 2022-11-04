@@ -1,6 +1,8 @@
 ﻿using ITBlog.Entities.Concrete.AuthorFolder;
 using ITBlog.Entities.Concrete.EntityFolder;
-using ITBlog.Entities.Concrete.PictureFolder;
+using ITBlog.Entities.Concrete.PostCategoryFolder;
+using ITBlog.Entities.Concrete.PostPictureFolder;
+using ITBlog.Entities.Concrete.PostPlaceFolder;
 
 namespace ITBlog.Entities.Concrete.PostFolder
 {
@@ -8,7 +10,9 @@ namespace ITBlog.Entities.Concrete.PostFolder
     {
         public Post()
         {
-            this.Categories = new HashSet<Category>();
+            this.Categories = new List<PostCategory>();
+            this.Pictures = new List<PostPicture>();
+            this.Places = new List<PostPlace>();
         }
 
         public string? Title { get; set; }
@@ -19,10 +23,12 @@ namespace ITBlog.Entities.Concrete.PostFolder
 
         public Guid AuthorId { get; set; }
 
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<PostCategory> Categories { get; set; }
 
-        public virtual ICollection<Picture> Pictures { get; set; }
+        public virtual ICollection<PostPicture> Pictures { get; set; }
 
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
+
+        public virtual ICollection<PostPlace> Places { get; set; }
     }
 }

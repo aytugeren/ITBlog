@@ -1,4 +1,5 @@
-﻿using ITBlog.Entities.Concrete.EntityFolder;
+﻿using ITBlog.Entities.Concrete.AuthorPictureFolder;
+using ITBlog.Entities.Concrete.EntityFolder;
 using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PostFolder;
 
@@ -9,6 +10,7 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
         public Author()
         {
             this.Posts = new List<Post>();
+            this.Pictures = new List<AuthorPicture>();
         }
 
         public string? AuthorName { get; set; }
@@ -25,6 +27,6 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
 
         public virtual ICollection<Post> Posts { get; set; }
 
-        public virtual ICollection<Picture> Pictures { get; set; }
+        public virtual ICollection<AuthorPicture> Pictures { get; set; }
     }
 }

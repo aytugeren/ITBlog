@@ -23,12 +23,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Home/GetHomeRightSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRIb21lUmlnaHRTaWRlQmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Post/GetPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxHZXRQb3N0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/Error.cshtml]

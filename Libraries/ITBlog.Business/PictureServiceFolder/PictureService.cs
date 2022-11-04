@@ -26,7 +26,7 @@ namespace ITBlog.Business.PictureServiceFolder
         {
             if (!string.IsNullOrEmpty(placeName))
             {
-                var result = _pictureRepository.Query(x => x.PicturePlace == placeName);
+                var result = _pictureRepository.Query(x => x.PicturePlace == placeName, string.Empty);
 
                 if (result.Any())
                 {

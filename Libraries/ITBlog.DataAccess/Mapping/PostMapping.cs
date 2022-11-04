@@ -1,4 +1,6 @@
 ﻿using ITBlog.Entities.Concrete;
+using ITBlog.Entities.Concrete.PictureFolder;
+using ITBlog.Entities.Concrete.PlaceFolder;
 using ITBlog.Entities.Concrete.PostFolder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -23,9 +25,6 @@ namespace ITBlog.DataAccess.Mapping
             builder.Property(x => x.CreatedDateTime).HasDefaultValue(DateTime.UtcNow);
 
             builder.ToTable("tblPost");
-
-            builder.HasMany<Category>(x => x.Categories)
-                .WithMany(x => x.Posts);
         }
     }
 }

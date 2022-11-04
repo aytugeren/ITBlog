@@ -19,13 +19,9 @@ namespace ITBlog.DataAccess.Mapping
             builder.Property(x => x.IsActive).HasDefaultValue(true);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
             builder.Property(x => x.CreatedDateTime).HasDefaultValue(DateTime.UtcNow);
+            builder.Property(x => x.PictureIsDefault).HasDefaultValue(false);
 
             builder.ToTable("tblPicture");
-            builder.HasMany<Post>(x => x.Posts)
-                .WithMany(x => x.Pictures);
-
-            builder.HasMany<Author>(x => x.Authors)
-                .WithMany(x => x.Pictures);
         }
     }
 }

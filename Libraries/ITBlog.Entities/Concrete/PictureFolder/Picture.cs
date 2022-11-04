@@ -1,16 +1,17 @@
-﻿using ITBlog.Entities.Concrete.AuthorFolder;
+﻿using ITBlog.Entities.Concrete.AuthorPictureFolder;
 using ITBlog.Entities.Concrete.EntityFolder;
-using ITBlog.Entities.Concrete.PostFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ITBlog.Entities.Concrete.PostPictureFolder;
 
 namespace ITBlog.Entities.Concrete.PictureFolder
 {
     public class Picture : BaseEntity
     {
+        public Picture()
+        {
+            this.Posts = new HashSet<PostPicture>();
+            this.Authors = new HashSet<AuthorPicture>();
+        }
+
         public string? PictureName { get; set; }
 
         public string? PictureUrl { get; set; }
@@ -31,8 +32,10 @@ namespace ITBlog.Entities.Concrete.PictureFolder
 
         public string? PictureContent { get; set; }
 
-        public virtual ICollection<Post> Posts { get; set; }
+        public bool PictureIsDefault { get; set; }
 
-        public virtual ICollection<Author> Authors { get; set; }
+        public virtual ICollection<PostPicture> Posts { get; set; }
+
+        public virtual ICollection<AuthorPicture> Authors { get; set; }
     }
 }

@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ITBlog.Business.DTO.MappingDTOs;
 
 namespace ITBlog.Business.DTO
 {
     public class PostDTO : BaseDTO
     {
-        public PostDTO()
-        {
-            this.Categories = new HashSet<CategoryDTO>();
-        }
-
         public string? Title { get; set; }
 
         public string? FirstContent { get; set; }
@@ -21,8 +12,12 @@ namespace ITBlog.Business.DTO
 
         public Guid AuthorId { get; set; }
 
-        public virtual ICollection<CategoryDTO> Categories { get; set; }
+        public virtual ICollection<PostCategoryDTO> Categories { get; set; }
 
-        public AuthorDTO Author { get; set; }
+        public virtual ICollection<PostPictureDTO> Pictures { get; set; }
+
+        public virtual AuthorDTO Author { get; set; }
+
+        public virtual ICollection<PostPlaceDTO> Places { get; set; }
     }
 }

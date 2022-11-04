@@ -39,5 +39,10 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
             return PartialView(footerModel);
         }
 
+        public PartialViewResult GetHomeRightSiderBar()
+        {
+            return PartialView();
+        }
+
     }
 }

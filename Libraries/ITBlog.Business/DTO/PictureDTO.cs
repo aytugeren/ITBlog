@@ -1,10 +1,4 @@
-﻿using ITBlog.Entities.Concrete.AuthorFolder;
-using ITBlog.Entities.Concrete.PostFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ITBlog.Business.DTO.MappingDTOs;
 
 namespace ITBlog.Business.DTO
 {
@@ -29,9 +23,10 @@ namespace ITBlog.Business.DTO
         public string? PictureTitle { get; set; }
 
         public string? PictureContent { get; set; }
+        public bool PictureIsDefault { get; set; }
 
-        public virtual ICollection<PostDTO> Posts { get; set; }
+        public virtual ICollection<PostPictureDTO> Posts { get; set; }
 
-        public virtual ICollection<AuthorDTO> Authors { get; set; }
+        public virtual ICollection<AuthorPictureDTO> Authors { get; set; }
     }
 }
