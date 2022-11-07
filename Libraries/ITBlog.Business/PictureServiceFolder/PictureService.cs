@@ -22,6 +22,22 @@ namespace ITBlog.Business.PictureServiceFolder
             _mapper = mapper;
         }
 
+        public PictureDTO GetCVByUserName(string userName)
+        {
+            if (!string.IsNullOrEmpty(userName))
+            {
+                string edditedPictureName = userName + "CV";
+                var picture = _pictureRepository.Query(x => x.PictureName == edditedPictureName, string.Empty).FirstOrDefault();
+
+                if (picture != null)
+                {
+                    return _mapper.Map<PictureDTO>(picture);
+                }
+            }
+
+            return default(PictureDTO);
+        }
+
         public List<PictureDTO> GetPicturesByPlaceName(string placeName)
         {
             if (!string.IsNullOrEmpty(placeName))

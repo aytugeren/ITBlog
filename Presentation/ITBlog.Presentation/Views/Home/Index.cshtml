@@ -8,6 +8,6 @@
         @await Html.RenderAction("GetPosts","Post", new {place = "HomePage"})
     </div>
     <div class="sidebar col-lg-3">
-        <!--RenderSideBar-->
+        @await Html.RenderAction("GetHomeRightSiderBar","Home")
     </div>
 </div>

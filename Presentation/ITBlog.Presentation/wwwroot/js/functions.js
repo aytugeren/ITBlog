@@ -88,7 +88,7 @@ window.scwEvents = window.scwEvents || {};
 			SEMICOLON.initialize.pageTransition();
 			SEMICOLON.initialize.goToTop();
 			SEMICOLON.initialize.lazyLoad();
-			SEMICOLON.initialize.lightbox();
+			//SEMICOLON.initialize.lightbox(); - Sorunlu
 			SEMICOLON.initialize.resizeVideos();
 			SEMICOLON.initialize.dataResponsiveClasses();
 			SEMICOLON.initialize.dataResponsiveHeights();
@@ -1326,7 +1326,6 @@ window.scwEvents = window.scwEvents || {};
 			SEMICOLON.widget.carousel();
 			SEMICOLON.widget.linkScroll();
 			SEMICOLON.widget.ajaxForm();
-			SEMICOLON.widget.subscription();
 			SEMICOLON.widget.shapeDivider();
 			SEMICOLON.widget.stickySidebar();
 			SEMICOLON.widget.cookieNotify();

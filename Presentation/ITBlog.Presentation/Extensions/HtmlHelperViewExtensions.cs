@@ -26,8 +26,8 @@ namespace ITBlog.Presentation.Extensions
             if (controller == null)
                 throw new ArgumentNullException(nameof(action));
 
-            var task = RenderActionAsync(helper, action, controller, area, parameters);
-            return task.Result;
+            var task = await RenderActionAsync(helper, action, controller, area, parameters);
+            return task;
         }
 
         private static async Task<IHtmlContent> RenderActionAsync(this IHtmlHelper helper, string action, string controller, string area, object? parameters = null)

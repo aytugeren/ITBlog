@@ -193,7 +193,15 @@ namespace ITBlog.DataAccess.RepositoryFolder
 
                     return resultEntities.ToList();
                 }
-                return this.Entities.Include(includedProperties).ToList();
+
+                if (this.Entities.Any())
+                {
+                    return this.Entities.Include(includedProperties).ToList();
+                }
+                else
+                {
+                    return this.Entities.ToList();
+                }
             }
             else if (predicate != null && !string.IsNullOrEmpty(includedProperties) && includedProperties.Contains('|'))
             {
@@ -211,7 +219,7 @@ namespace ITBlog.DataAccess.RepositoryFolder
                     }
                 }
 
-                return resultEntities.ToList();
+                return resultEntities.Where(predicate).ToList();
             }
             else if (!string.IsNullOrEmpty(includedProperties))
             {

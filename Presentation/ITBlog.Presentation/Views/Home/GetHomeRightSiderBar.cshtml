@@ -1,0 +1,40 @@
+﻿@using ITBlog.Presentation.Extensions
+@model ITBlog.Presentation.Models.HomeSideBarModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="sidebar-widgets-wrap">
+
+    <div class="widget subscribe-widget clearfix">
+        <div class="dark" style="padding: 25px; background-color: #383838; border-radius: 2px;">
+            <div class="fancy-title title-border">
+                <h4>Güncellemelerden Haberdar Olun!</h4>
+            </div>
+
+            <p style="font-size: 15px; line-height: 1.5; color: #999;">Spam Göndermiyoruz!! Sadece yeni haberlerimiz hakkında bilgi veriyoruz:</p>
+            <div class="widget-subscribe-form-result"></div>
+            <div class="input-group mx-auto">
+                <div class="input-group-text"><i class="icon-email2"></i></div>
+                <input type="email" id="subsEmail" name="widget-subscribe-form-email" class="form-control required email" placeholder="Mail Adresini Yaz..">
+            </div>
+            <button class="button button-3d w-100 button-small m-0" style="margin-top: 15px !important;" id="GetBeSubs">Takipçimiz Ol</button>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        @await Html.PartialAsync("../Post/GetSideBarRecentPost", Model.RecentPosts)
+        @if (Model.SocialMedias != null)
+        {
+            @await Html.PartialAsync("../Home/GetSocialMedias", Model.SocialMedias)
+        }
+        @if (Model.CVPicture != null)
+        {
+            @await Html.PartialAsync("../Home/GetCVPicture", Model.CVPicture)
+        }
+    }
+</div>
+
+
+<script src="js/homePage/homepage.js"></script>

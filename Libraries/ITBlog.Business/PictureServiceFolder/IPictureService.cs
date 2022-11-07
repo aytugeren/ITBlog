@@ -10,5 +10,7 @@ namespace ITBlog.Business.PictureServiceFolder
     public interface IPictureService
     {
         List<PictureDTO> GetPicturesByPlaceName(string placeName);
+
+        PictureDTO GetCVByUserName(string userName);
     }
 }

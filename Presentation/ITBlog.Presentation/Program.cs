@@ -8,6 +8,8 @@ using ITBlog.Business.FooterServiceFolder;
 using ITBlog.Business.PostServiceFolder;
 using ITBlog.Business.AuthorServiceFolder;
 using ITBlog.Business.PlaceServiceFolder;
+using ITBlog.Business.SubscriberServiceFolder;
+using ITBlog.Business.SocialMediaFolder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +32,9 @@ builder.Services.AddTransient<IFooterService, FooterService>();
 builder.Services.AddTransient<IPostService, PostService>();
 builder.Services.AddTransient<IAuthorService, AuthorService>();
 builder.Services.AddTransient<IPlaceService, PlaceService>();
+builder.Services.AddTransient<ISubscriberService, SubscriberService>();
+builder.Services.AddTransient<ISocialMediaService, SocialMediaService>();
+builder.Services.AddRazorPages().AddNewtonsoftJson();
 
 var app = builder.Build();
 

@@ -1,0 +1,42 @@
+﻿@model ITBlog.Business.DTO.PictureDTO
+@{
+}
+<div class="widget clearfix">
+
+    <h4>CV'me Bir Göz Atın</h4>
+    <div class="portfolio-item">
+        <div class="portfolio-image">
+            <a href="portfolio-single.html">
+                <img src="@Model.PictureUrl" id="pictureName" alt="@Model.PictureAltName">
+            </a>
+            <div class="bg-overlay">
+                <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
+                    <a href="@Model.PictureUrl" id="pictureUrl" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                    <a href="aboutus" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350"><i class="icon-line-ellipsis"></i></a>
+                    <a id="downloadButton" class="overlay-trigger-icon bg-light text-dark" style="cursor:pointer" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350"><i class="icon-line-download"></i></a>
+                </div>
+                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let downloadButton = document.getElementById("downloadButton");
+    let pictureUrl = document.getElementById("pictureUrl");
+    let pictureName = document.getElementById("pictureName");
+
+    downloadButton.addEventListener("click", async function () {
+        let imageSrc = pictureUrl.href;
+        const image = await fetch(imageSrc)
+        const imageBlog = await image.blob()
+        const imageURL = URL.createObjectURL(imageBlog)
+
+        const link = document.createElement('a')
+        link.href = imageURL
+        link.download = pictureName.alt;
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+
+    })
+</script>

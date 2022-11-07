@@ -37,9 +37,9 @@ namespace ITBlog.Business.PostServiceFolder
 
             if (placeId != Guid.Empty)
             {
-                var posts = _postPlaceRepository.Query(x => x.PlaceId == placeId, "Post|Post.Pictures.Picture|Post.Categories.Category").Select(x => x.Post);
+                var posts = _postPlaceRepository.Query(x => x.PlaceId == placeId, "Post|Post.Pictures.Picture|Post.Categories.Category");
 
-                var result = _mapper.Map<List<PostDTO>>(posts);
+                var result = _mapper.Map<List<PostDTO>>(posts.Select(x => x.Post));
                 
                 foreach(var post in result)
                 {

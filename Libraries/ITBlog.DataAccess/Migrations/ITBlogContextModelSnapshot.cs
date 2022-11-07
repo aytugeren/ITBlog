@@ -22,6 +22,21 @@ namespace ITBlog.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("AuthorSocialMedia", b =>
+                {
+                    b.Property<Guid>("AuthorsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SocialMediasId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AuthorsId", "SocialMediasId");
+
+                    b.HasIndex("SocialMediasId");
+
+                    b.ToTable("AuthorSocialMedia");
+                });
+
             modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorFolder.Author", b =>
                 {
                     b.Property<Guid>("Id")
@@ -46,7 +61,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 532, DateTimeKind.Utc).AddTicks(8427));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(6643));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -80,7 +95,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 534, DateTimeKind.Utc).AddTicks(4642));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 856, DateTimeKind.Utc).AddTicks(2880));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -126,7 +141,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 16, 55, 54, 532, DateTimeKind.Local).AddTicks(7639));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 9, 1, 29, 854, DateTimeKind.Local).AddTicks(5687));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -163,7 +178,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 534, DateTimeKind.Utc).AddTicks(8270));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 856, DateTimeKind.Utc).AddTicks(6331));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -197,7 +212,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 533, DateTimeKind.Utc).AddTicks(275));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(8463));
 
                     b.Property<int>("Height")
                         .HasColumnType("int");
@@ -261,7 +276,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 533, DateTimeKind.Utc).AddTicks(1196));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(9617));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -296,7 +311,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 533, DateTimeKind.Utc).AddTicks(7170));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 855, DateTimeKind.Utc).AddTicks(5558));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -333,7 +348,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 532, DateTimeKind.Utc).AddTicks(6695));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(4610));
 
                     b.Property<string>("FirstContent")
                         .HasColumnType("nvarchar(max)");
@@ -375,7 +390,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 533, DateTimeKind.Utc).AddTicks(3391));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 855, DateTimeKind.Utc).AddTicks(1996));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -411,7 +426,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 2, 13, 55, 54, 534, DateTimeKind.Utc).AddTicks(1011));
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 855, DateTimeKind.Utc).AddTicks(9392));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -434,6 +449,99 @@ namespace ITBlog.DataAccess.Migrations
                     b.HasIndex("PlaceId");
 
                     b.ToTable("tblPostPlace");
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.SocialMediaFolder.SocialMedia", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 856, DateTimeKind.Utc).AddTicks(9643));
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("SocialMediaButtonClass")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SocialMediaIconAsHtml")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SocialMediaName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SocialMediaUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tblSocialMedia", (string)null);
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.SubscriberFolder.Subscriber", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 5, 9, 1, 29, 856, DateTimeKind.Local).AddTicks(8755));
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsActivedTheEmail")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("SubscriberEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tblSubscriber", (string)null);
+                });
+
+            modelBuilder.Entity("AuthorSocialMedia", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Author", null)
+                        .WithMany()
+                        .HasForeignKey("AuthorsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ITBlog.Entities.Concrete.SocialMediaFolder.SocialMedia", null)
+                        .WithMany()
+                        .HasForeignKey("SocialMediasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorPictureFolder.AuthorPicture", b =>

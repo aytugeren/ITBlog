@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\site.js" />
+    <Folder Include="wwwroot\demos\travel\js\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\demos\travel\js\" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.10" />
   </ItemGroup>
 
   <ItemGroup>

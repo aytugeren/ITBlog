@@ -2,6 +2,7 @@
 using ITBlog.Entities.Concrete.EntityFolder;
 using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PostFolder;
+using ITBlog.Entities.Concrete.SocialMediaFolder;
 
 namespace ITBlog.Entities.Concrete.AuthorFolder
 {
@@ -28,5 +29,7 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
         public virtual ICollection<Post> Posts { get; set; }
 
         public virtual ICollection<AuthorPicture> Pictures { get; set; }
+
+        public virtual ICollection<SocialMedia> SocialMedias { get; set; }
     }
 }

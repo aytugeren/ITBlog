@@ -1,0 +1,16 @@
+﻿@model List<ITBlog.Business.DTO.SocialMediaDTO>
+@{
+}
+<div class="widget clearfix">
+
+    <h4>Sosyal Kanallar</h4>
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <a href="@item.SocialMediaUrl" class="@item.SocialMediaButtonClass" data-bs-toggle="tooltip" data-bs-placement="top" title="@item.SocialMediaName">
+                @Html.Raw(item.SocialMediaIconAsHtml)
+            </a>
+        }
+    }
+</div>
