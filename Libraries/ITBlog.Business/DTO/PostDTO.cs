@@ -19,5 +19,7 @@ namespace ITBlog.Business.DTO
         public virtual AuthorDTO Author { get; set; }
 
         public virtual ICollection<PostPlaceDTO> Places { get; set; }
+
+        public virtual ICollection<CommentDTO> Comments { get; set; }
     }
 }

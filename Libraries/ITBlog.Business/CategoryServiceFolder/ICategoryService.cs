@@ -10,5 +10,7 @@ namespace ITBlog.Business.CategoryServiceFolder
     public interface ICategoryService
     {
         Dictionary<CategoryDTO, List<CategoryDTO>> GetCategoryByPlaceName(string placeName);
+
+        CategoryDTO GetCategoryById(Guid id);
     }
 }

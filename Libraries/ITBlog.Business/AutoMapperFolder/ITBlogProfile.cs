@@ -4,6 +4,7 @@ using ITBlog.Business.DTO.MappingDTOs;
 using ITBlog.Entities.Concrete;
 using ITBlog.Entities.Concrete.AuthorFolder;
 using ITBlog.Entities.Concrete.CategoryPlaceFolder;
+using ITBlog.Entities.Concrete.CommentFolder;
 using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PlaceFolder;
 using ITBlog.Entities.Concrete.PostCategoryFolder;
@@ -12,6 +13,7 @@ using ITBlog.Entities.Concrete.PostPictureFolder;
 using ITBlog.Entities.Concrete.PostPlaceFolder;
 using ITBlog.Entities.Concrete.SocialMediaFolder;
 using ITBlog.Entities.Concrete.SubscriberFolder;
+using ITBlog.Entities.Concrete.UserFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +39,8 @@ namespace ITBlog.Business.AutoMapperFolder
                 cfg.CreateMap<CategoryPlaceDTO, CategoryPlace>().ReverseMap();
                 cfg.CreateMap<SubscriberDTO, Subscriber>().ReverseMap();
                 cfg.CreateMap<SocialMediaDTO, SocialMedia>().ReverseMap();
+                cfg.CreateMap<UserDTO, User>().ReverseMap();
+                cfg.CreateMap<CommentDTO, Comment>().ReverseMap();
             });
 
             return mapperConfiguration;

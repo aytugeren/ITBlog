@@ -22,6 +22,18 @@ namespace ITBlog.Business.CategoryServiceFolder
             _mapper = mapper;
         }
 
+        public CategoryDTO GetCategoryById(Guid id)
+        {
+            var category = _categoryRepository.Query(x => x.Id == id, "Posts|Posts.Post|Posts.Post.Comments").FirstOrDefault();
+
+            if (category != null)
+            {
+                return _mapper.Map<CategoryDTO>(category);
+            }
+
+            return default(CategoryDTO);
+        }
+
         public Dictionary<CategoryDTO, List<CategoryDTO>> GetCategoryByPlaceName(string placeName)
         {
             var listOfCategories = new Dictionary<CategoryDTO, List<CategoryDTO>>();

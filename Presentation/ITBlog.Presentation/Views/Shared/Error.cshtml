@@ -1,25 +1,86 @@
-﻿@model ErrorViewModel
-@{
-    ViewData["Title"] = "Error";
+﻿@{
+	Layout = "_LayoutPostDetail";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
-}
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>404 | Sayfani Bulamadim</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="row align-items-center col-mb-80">
+
+						<div class="col-lg-6">
+							<div class="error404 center">404</div>
+						</div>
+
+						<div class="col-lg-6">
+
+							<div class="heading-block text-center text-lg-start border-bottom-0">
+								<h4>Ooopps.! İstediğin sayfayı bulamadım. Eğer bu sayfanın gelmesi gerektiğini düşünüyorsan benimle iletişime geç!</h4>
+								<span>Yada başka bir sayfaya bakalım: </span>
+							</div>
+
+							<form action="#" method="get" class="mb-5">
+								<div class="input-group input-group-lg">
+									<input type="text" class="form-control" placeholder="Search for Pages...">
+									<button class="btn btn-danger" type="button">Search</button>
+								</div>
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+</body>
+</html>

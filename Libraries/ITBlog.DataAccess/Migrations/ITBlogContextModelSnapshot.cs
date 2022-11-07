@@ -61,7 +61,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(6643));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(6147));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 856, DateTimeKind.Utc).AddTicks(2880));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 625, DateTimeKind.Utc).AddTicks(2977));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -141,7 +141,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 9, 1, 29, 854, DateTimeKind.Local).AddTicks(5687));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 19, 34, 27, 623, DateTimeKind.Local).AddTicks(5213));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -178,7 +178,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 856, DateTimeKind.Utc).AddTicks(6331));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 625, DateTimeKind.Utc).AddTicks(6962));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -203,6 +203,54 @@ namespace ITBlog.DataAccess.Migrations
                     b.ToTable("tblCategoryPlaceMapping", (string)null);
                 });
 
+            modelBuilder.Entity("ITBlog.Entities.Concrete.CommentFolder.Comment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CommentDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CommentResult")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 626, DateTimeKind.Utc).AddTicks(3676));
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("tblComment", (string)null);
+                });
+
             modelBuilder.Entity("ITBlog.Entities.Concrete.PictureFolder.Picture", b =>
                 {
                     b.Property<Guid>("Id")
@@ -212,7 +260,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(8463));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(8256));
 
                     b.Property<int>("Height")
                         .HasColumnType("int");
@@ -276,7 +324,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(9617));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(9263));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -311,7 +359,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 855, DateTimeKind.Utc).AddTicks(5558));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 624, DateTimeKind.Utc).AddTicks(5560));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -348,7 +396,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 854, DateTimeKind.Utc).AddTicks(4610));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(3187));
 
                     b.Property<string>("FirstContent")
                         .HasColumnType("nvarchar(max)");
@@ -390,7 +438,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 855, DateTimeKind.Utc).AddTicks(1996));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 624, DateTimeKind.Utc).AddTicks(1482));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -426,7 +474,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 855, DateTimeKind.Utc).AddTicks(9392));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 624, DateTimeKind.Utc).AddTicks(9342));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -460,7 +508,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 6, 1, 29, 856, DateTimeKind.Utc).AddTicks(9643));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 626, DateTimeKind.Utc).AddTicks(347));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -501,7 +549,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 5, 9, 1, 29, 856, DateTimeKind.Local).AddTicks(8755));
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 19, 34, 27, 625, DateTimeKind.Local).AddTicks(9441));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -527,6 +575,65 @@ namespace ITBlog.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tblSubscriber", (string)null);
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.UserFolder.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 626, DateTimeKind.Utc).AddTicks(1738));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("LastVisitedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tblUser", (string)null);
                 });
 
             modelBuilder.Entity("AuthorSocialMedia", b =>
@@ -580,6 +687,25 @@ namespace ITBlog.DataAccess.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Place");
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.CommentFolder.Comment", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.PostFolder.Post", "Post")
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ITBlog.Entities.Concrete.UserFolder.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ITBlog.Entities.Concrete.PostCategoryFolder.PostCategory", b =>
@@ -682,9 +808,16 @@ namespace ITBlog.DataAccess.Migrations
                 {
                     b.Navigation("Categories");
 
+                    b.Navigation("Comments");
+
                     b.Navigation("Pictures");
 
                     b.Navigation("Places");
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.UserFolder.User", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

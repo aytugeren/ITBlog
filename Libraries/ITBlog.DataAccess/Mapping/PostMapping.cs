@@ -1,4 +1,5 @@
 ﻿using ITBlog.Entities.Concrete;
+using ITBlog.Entities.Concrete.CommentFolder;
 using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PlaceFolder;
 using ITBlog.Entities.Concrete.PostFolder;
@@ -25,6 +26,10 @@ namespace ITBlog.DataAccess.Mapping
             builder.Property(x => x.CreatedDateTime).HasDefaultValue(DateTime.UtcNow);
 
             builder.ToTable("tblPost");
+
+            builder.HasMany<Comment>(x => x.Comments)
+                .WithOne(x => x.Post)
+                .HasForeignKey(x => x.PostId);
         }
     }
 }

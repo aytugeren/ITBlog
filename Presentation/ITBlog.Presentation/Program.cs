@@ -10,6 +10,8 @@ using ITBlog.Business.AuthorServiceFolder;
 using ITBlog.Business.PlaceServiceFolder;
 using ITBlog.Business.SubscriberServiceFolder;
 using ITBlog.Business.SocialMediaFolder;
+using ITBlog.Business.CommentServiceFolder;
+using ITBlog.Business.UserServiceFolder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +36,8 @@ builder.Services.AddTransient<IAuthorService, AuthorService>();
 builder.Services.AddTransient<IPlaceService, PlaceService>();
 builder.Services.AddTransient<ISubscriberService, SubscriberService>();
 builder.Services.AddTransient<ISocialMediaService, SocialMediaService>();
+builder.Services.AddTransient<ICommentService, CommentService>();
+builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddRazorPages().AddNewtonsoftJson();
 
 var app = builder.Build();

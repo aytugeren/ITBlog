@@ -1,4 +1,5 @@
 ﻿using ITBlog.Entities.Concrete.AuthorFolder;
+using ITBlog.Entities.Concrete.CommentFolder;
 using ITBlog.Entities.Concrete.EntityFolder;
 using ITBlog.Entities.Concrete.PostCategoryFolder;
 using ITBlog.Entities.Concrete.PostPictureFolder;
@@ -13,6 +14,7 @@ namespace ITBlog.Entities.Concrete.PostFolder
             this.Categories = new List<PostCategory>();
             this.Pictures = new List<PostPicture>();
             this.Places = new List<PostPlace>();
+            this.Comments = new List<Comment>();
         }
 
         public string? Title { get; set; }
@@ -30,5 +32,7 @@ namespace ITBlog.Entities.Concrete.PostFolder
         public virtual Author Author { get; set; }
 
         public virtual ICollection<PostPlace> Places { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

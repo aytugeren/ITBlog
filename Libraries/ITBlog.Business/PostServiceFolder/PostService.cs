@@ -91,5 +91,66 @@ namespace ITBlog.Business.PostServiceFolder
 
             return default(List<IndexViewDTOS>);
         }
+
+        public PostDTO GetPostById(Guid id)
+        {
+            var post = _postRepository.Query(x => x.Id == id, "Author|Categories|Categories.Category|Pictures|Pictures.Picture").FirstOrDefault();
+            if (post != null)
+            {
+                return _mapper.Map<PostDTO>(post);
+            }
+
+            return default(PostDTO);
+        }
+
+        public List<PostDTO> GetPostsByCategory(Guid[] categoryIds, Guid authorId)
+        {
+            List<PostDTO> posts = new List<PostDTO>();
+            if (categoryIds != null)
+            {
+                if (categoryIds.Count() > 0)
+                {
+                    foreach (var item in categoryIds)
+                    {
+                        var relatedPosts = _postRepository.Query(null, "Categories|Category");
+                        relatedPosts = relatedPosts.Where(x => x.Categories.Any(x => categoryIds.Contains(x.CategoryId))).ToList();
+
+                        if (relatedPosts != null)
+                        {
+                            var authorsPosts = relatedPosts.Where(x => x.AuthorId == authorId);
+                            if (authorsPosts.Count() > 0)
+                            {
+                                foreach (var post in relatedPosts.Where(x => x.AuthorId == authorId))
+                                {
+                                    posts.Add(_mapper.Map<PostDTO>(post));
+                                }
+                            }
+                            else
+                            {
+                                foreach (var post in relatedPosts)
+                                {
+                                    posts.Add(_mapper.Map<PostDTO>(post));
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            return posts;
+        }
+
+        public List<PostDTO> GetPostsByDeterminedDayBefore(int dayBefore)
+        {
+            var posts = _postRepository.Query(x => x.CreatedDateTime >= DateTime.Now.AddDays(-dayBefore), "Author");
+
+            if (posts != null)
+            {
+                return _mapper.Map<List<PostDTO>>(posts);
+            }
+
+            return default(List<PostDTO>);
+        }
     }
 }

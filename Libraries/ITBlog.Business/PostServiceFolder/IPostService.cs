@@ -11,5 +11,11 @@ namespace ITBlog.Business.PostServiceFolder
     public interface IPostService
     {
         List<IndexViewDTOS> GetPostsByPlace(Guid placeId);
+
+        PostDTO GetPostById(Guid id);
+
+        List<PostDTO> GetPostsByCategory(Guid[] categoryIds, Guid authorId);
+
+        List<PostDTO> GetPostsByDeterminedDayBefore(int dayBefore);
     }
 }

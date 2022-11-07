@@ -3,6 +3,7 @@ using ITBlog.Entities.Concrete;
 using ITBlog.Entities.Concrete.AuthorFolder;
 using ITBlog.Entities.Concrete.AuthorPictureFolder;
 using ITBlog.Entities.Concrete.CategoryPlaceFolder;
+using ITBlog.Entities.Concrete.CommentFolder;
 using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PlaceFolder;
 using ITBlog.Entities.Concrete.PostCategoryFolder;
@@ -11,6 +12,7 @@ using ITBlog.Entities.Concrete.PostPictureFolder;
 using ITBlog.Entities.Concrete.PostPlaceFolder;
 using ITBlog.Entities.Concrete.SocialMediaFolder;
 using ITBlog.Entities.Concrete.SubscriberFolder;
+using ITBlog.Entities.Concrete.UserFolder;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITBlog.DataAccess.ContextFolder
@@ -41,6 +43,8 @@ namespace ITBlog.DataAccess.ContextFolder
             modelBuilder.ApplyConfiguration(new CategoryPlaceMapping());
             modelBuilder.ApplyConfiguration(new SubscriberMapping());
             modelBuilder.ApplyConfiguration(new SocialMediaMapping());
+            modelBuilder.ApplyConfiguration(new UserMapping());
+            modelBuilder.ApplyConfiguration(new CommentMapping());
         }
 
         public DbSet<Category> tblCategory { get; set; }
@@ -66,5 +70,9 @@ namespace ITBlog.DataAccess.ContextFolder
         public DbSet<Subscriber> tblSubscriber { get; set; }
 
         public DbSet<SocialMedia> tblSocialMedia { get; set; }
+
+        public DbSet<Comment> tblComment { get; set; }
+
+        public DbSet<User> tblUser { get; set; }
     }
 }

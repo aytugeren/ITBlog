@@ -1,0 +1,284 @@
+﻿@model ITBlog.Presentation.Models.PostDetailModel
+
+@{
+    Layout = "_LayoutPostDetail";
+    var pictures = Model.Post.Pictures.Select(x => x.Picture);
+    var titlePicture = pictures.Where(x => x.PictureIsDefault).FirstOrDefault();
+}
+<!-- Content
+        ============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+
+            <div class="single-post mb-0">
+
+                <!-- Single Post
+                ============================================= -->
+                <div class="entry clearfix">
+
+                    <!-- Entry Title
+                    ============================================= -->
+                    <div class="entry-title">
+                        <h2>@Html.Raw(Model.Post.FirstContent)</h2>
+                    </div><!-- .entry-title end -->
+                    <!-- Entry Meta
+                    ============================================= -->
+                    <div class="entry-meta">
+                        <ul>
+                            <li><i class="icon-calendar3"></i>@Model.Post.CreatedDateTime.ToString("dd-MM-yyyy")</li>
+                            <li><a href="#"><i class="icon-user"></i> @Model.Author.AuthorName @Model.Author.AuthorLastName</a></li>
+                            <li>
+                                <i class="icon-folder-open"></i>
+                                @foreach (var item in Model.Post.Categories)
+                                {
+                                    <a href="@item.Category.CategoryUrl">@item.Category.CategoryName</a>
+                                }
+                            </li>
+                            <li><a href="#"><i class="icon-comments"></i>@Model.Comments.Count Yorum</a></li>
+                        </ul>
+                    </div><!-- .entry-meta end -->
+                    <!-- Entry Image
+                    ============================================= -->
+                    <div class="entry-image bottommargin">
+                        @if (titlePicture != null)
+                        {
+                            <a href="@titlePicture.PictureUrl"><img src="@titlePicture.PictureUrl" alt="@titlePicture.PictureAltName"></a>
+                        }
+                    </div><!-- .entry-image end -->
+                    <!-- Entry Content
+                    ============================================= -->
+                    <div class="entry-content mt-0">
+                        @Html.Raw(Model.Post.SecondContent)
+                        <div class="clear"></div>
+                    </div>
+                </div><!-- .entry end -->
+                <!-- Post Author Info
+                ============================================= -->
+                <div class="card">
+                    <div class="card-header"><strong>Yayınlayan : <a href="#">@Model.Author.AuthorName @Model.Author.AuthorLastName</a></strong></div>
+                </div><!-- Post Single - Author End -->
+
+                <div class="line"></div>
+                @if (Model.RelatedPosts != null && Model.RelatedPosts.Count > 0)
+                {
+                    <h4>Bağlantılı Diğer Postlar:</h4>
+
+                    <div class="related-posts row posts-md col-mb-30">
+                        @foreach (var item in Model.RelatedPosts)
+                        {
+                            <div class="entry col-12 col-md-6">
+                                <div class="grid-inner row align-items-center gutter-20">
+                                    <div class="col-4 col-xl-5">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="images/blog/small/10.jpg" alt="Blog Single"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-xl-7">
+                                        <div class="entry-title title-xs nott">
+                                            <h3><a href="/Post/GetPostById/@item.Id">@Html.Raw(item.FirstContent)</a></h3>
+                                        </div>
+                                        <div class="entry-meta">
+                                            <ul>
+                                                <li><i class="icon-calendar3"></i> @item.CreatedDateTime.ToString("dd-MM-yyyy")</li>
+                                                <li><a href="#"><i class="icon-comments"></i> @item.Comments.Count</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent.Substring(0,100))</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+                @if (Model.RecentPosts != null && Model.RecentPosts.Count > 0)
+                {
+                    <h4>Son 10 Günlük Postlar:</h4>
+
+                    <div class="related-posts row posts-md col-mb-30">
+                        @foreach (var item in Model.RecentPosts)
+                        {
+                            var picturess = item.Pictures.Where(x => x.Picture.PictureIsDefault).Select(x => x.Picture).ToList();
+                            var titlePictureOfItem = picturess.FirstOrDefault() != null ? picturess.FirstOrDefault().PictureUrl : string.Empty;
+
+                            <div class="entry col-12 col-md-6">
+                                <div class="grid-inner row align-items-center gutter-20">
+                                    <div class="col-4 col-xl-5">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="@titlePictureOfItem" alt="BlogGörseli"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-xl-7">
+                                        <div class="entry-title title-xs nott">
+                                            <h3><a href="/Post/GetPostById/@item.Id">@Html.Raw(item.FirstContent)</a></h3>
+                                        </div>
+                                        <div class="entry-meta">
+                                            <ul>
+                                                <li><i class="icon-calendar3"></i> @item.CreatedDateTime.ToString("dd-MM-yyyy")</li>
+                                                <li><a href="#"><i class="icon-comments"></i> @item.Comments.Count</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent.Substring(0,100))</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- Comments
+                ============================================= -->
+                <div id="comments" class="clearfix">
+
+                    <h3 id="comments-title"><span>@Model.Comments.Count</span> Yorum</h3>
+
+                    @if (Model.Comments.Count > 0){
+                        <!-- Comments List
+                        ============================================= -->
+                        <ol class="commentlist clearfix">
+
+                            <li class="comment even thread-even depth-1" id="li-comment-1">
+
+                                @foreach(var comment in Model.Comments){
+                                    <div id="comment-1" class="comment-wrap clearfix">
+
+                                        <div class="comment-content clearfix">
+
+                                            <div class="comment-author">@comment.User.FirstName @comment.User.LastName<span><a href="#" title="Permalink to this comment">@comment.CommentDateTime.ToString("dd-MM-yyyy")</a></span></div>
+
+                                            <p>@Html.Raw(comment.CommentResult)</p>
+
+                                            <a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+
+                                        </div>
+
+                                        <div class="clear"></div>
+
+                                    </div>
+                                }
+
+
+
+                                <ul class='children'>
+
+                                    <li class="comment byuser comment-author-_smcl_admin odd alt depth-2" id="li-comment-3">
+
+                                        <div id="comment-3" class="comment-wrap clearfix">
+
+                                            <div class="comment-meta">
+
+                                                <div class="comment-author vcard">
+
+                                                    <span class="comment-avatar clearfix">
+                                                        <img alt='Image' src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' />
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="comment-content clearfix">
+
+                                                <div class="comment-author"><a href='#' rel='external nofollow' class='url'>SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span></div>
+
+                                                <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                                                <a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+
+                                            </div>
+
+                                            <div class="clear"></div>
+
+                                        </div>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            <li class="comment byuser comment-author-_smcl_admin even thread-odd thread-alt depth-1" id="li-comment-2">
+
+                                <div id="comment-2" class="comment-wrap clearfix">
+
+                                    <div class="comment-meta">
+
+                                        <div class="comment-author vcard">
+
+                                            <span class="comment-avatar clearfix">
+                                                <img alt='Image' src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="comment-content clearfix">
+
+                                        <div class="comment-author"><a href='https://themeforest.net/user/semicolonweb' rel='external nofollow' class='url'>SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span></div>
+
+                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+                                        <a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                </div>
+
+                            </li>
+
+                        </ol>
+
+                        <!-- .commentlist end -->
+
+                        <div class="clear"></div>
+
+                        <!-- Comment Form
+                        ============================================= -->
+                    }
+   
+                    <div id="respond">
+
+                        <h3>Bir <span>Yorum</span> Bırak:</h3>
+
+                        <form class="row" action="/Comment/AddComment" method="post" id="commentform">
+                            <input type="text" name="PostId" id="PostId" style="display:none" value="@Model.Post.Id" />
+                            <div class="col-md-4 form-group">
+                                <label for="author">Ad</label>
+                                <input type="text" name="FirstName" id="author" value="" size="22" tabindex="1" class="sm-form-control" />
+                            </div>
+
+                            <div class="col-md-4 form-group">
+                                <label for="author">Soyad</label>
+                                <input type="text" name="SecondName" id="secondName" value="" size="22" tabindex="1" class="sm-form-control" />
+                            </div>
+
+                            <div class="col-md-4 form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="Email" id="email" value="" size="22" tabindex="2" class="sm-form-control" required/>
+                            </div>
+
+                            <div class="w-100"></div>
+
+                            <div class="col-12 form-group">
+                                <label for="comment">Yorum</label>
+                                <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control" required></textarea>
+                            </div>
+
+                            <div class="col-12 form-group">
+                                <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d m-0">Yorum Yap</button>
+                            </div>
+                        </form>
+
+                    </div><!-- #respond end -->
+
+                </div><!-- #comments end -->
+
+            </div>
+
+        </div>
+    </div>
+</section><!-- #content end -->

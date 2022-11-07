@@ -1,8 +1,5 @@
 ﻿@using ITBlog.Business.DTO
 @model List<ITBlog.Business.DTO.ViewDTOs.IndexViewDTOS>
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
     var tagPicture = new PictureDTO();
 }
@@ -19,13 +16,13 @@
                         @if (tagPicture != null)
                         {
                             <div class="entry-image">
-                                <a href="/Post/@post.Post.Id" data-lightbox="image"><img src="@post.MainPicture.PictureUrl" alt="@post.MainPicture.PictureAltName"></a>
+                                <a href="/Post/GetPostById/@post.Post.Id" data-lightbox="image"><img src="@post.MainPicture.PictureUrl" alt="@post.MainPicture.PictureAltName"></a>
                             </div>
                         }
                     </div>
                     <div class="col-md-8 ps-md-4">
                         <div class="entry-title title-sm">
-                            <h2><a href="/Post/@post.Post.Id">@Html.Raw(post.Post.Title)</a></h2>
+                            <h2><a href="/Post/GetPostById/@post.Post.Id">@Html.Raw(post.Post.Title)</a></h2>
                         </div>
                         <div class="entry-meta">
                             <ul>
@@ -42,12 +39,12 @@
                                 @if (post.Post.SecondContent.Length > 250)
                                 {
                                     <p>@Html.Raw(post.Post.SecondContent.Substring(0, 250) + "...")</p>
-                                    <a href="/Post/@post.Post.Id" class="more-link">Okumaya Devam Et</a>
+                                    <a href="/Post/GetPostById/@post.Post.Id" class="more-link">Okumaya Devam Et</a>
                                 }
                                 else
                                 {
                                     <p>@Html.Raw(post.Post.SecondContent)</p>
-                                    <a href="/Post/@post.Post.Id" class="more-link">Yazının İçeriğini Gör</a>
+                                    <a href="/Post/GetPostById/@post.Post.Id" class="more-link">Yazının İçeriğini Gör</a>
                                 }
                             }
                             else
