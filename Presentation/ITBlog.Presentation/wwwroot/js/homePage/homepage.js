@@ -31,8 +31,8 @@ subButton.addEventListener("click", async function () {
             successAlert.click();
         }
         else if (content == "EntityError") {
-            errorAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Hata Oluştu!");
-            errorAlert.click();
+                errorAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Hata Oluştu!");
+                errorAlert.click();
         }
         else {
             warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Lütfen geçerli bir veri giriniz!");

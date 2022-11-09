@@ -10,5 +10,9 @@ namespace ITBlog.Business.UserServiceFolder
     public interface IUserService
     {
         UserDTO GetUserByEmail(string email);
+
+        UserDTO GetUserByUserName(string userName);
+
+        bool InserToUser(UserDTO model);
     }
 }

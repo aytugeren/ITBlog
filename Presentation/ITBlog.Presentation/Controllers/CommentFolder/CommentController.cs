@@ -1,4 +1,5 @@
 ﻿using ITBlog.Business.CommentServiceFolder;
+using ITBlog.Business.DTO;
 using ITBlog.Business.UserServiceFolder;
 using ITBlog.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -25,10 +26,11 @@ namespace ITBlog.Presentation.Controllers.CommentFolder
         public IActionResult AddComment(CommentModel model)
         {
             var user = _userService.GetUserByEmail(model.Email);
+
             if (user == null)
             {
-                //return RedirectToAction("SignUp", "User", new {email = model.Email});
-                return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
+                return RedirectToAction("SignUp", "User", new { email = model.Email });
+                //return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
             }
             else
             {

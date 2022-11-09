@@ -1,0 +1,233 @@
+﻿@using ITBlog.Presentation.Extensions
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="~/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="~/style.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/components/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/components/timepicker.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/components/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="~/css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Document Title
+	============================================= -->
+	<title>Login</title>
+
+</head>
+
+<body class="stretched">
+		<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+		<a href="#" class="btn btn-info me-2" style="display:none" id="infoAlert" data-notify-type="info" data-notify-msg="<i class='icon-info-sign me-1'></i> Welcome to Canvas Demo!" onclick="SEMICOLON.widget.notifications({ el: this }); return false;">Show Info</a>
+
+		<a href="#" class="btn btn-danger me-2" style="display:none" id="errorAlert" data-notify-type="error" data-notify-msg="<i class='icon-remove-sign me-1'></i> Incorrect Input. Please Try Again!" onclick="SEMICOLON.widget.notifications({ el: this }); return false;">Show Error</a>
+
+		<a href="#" class="btn btn-success me-2" style="display:none" id="successAlert" data-notify-type="success" data-notify-msg="<i class='icon-ok-sign me-1'></i> Message Sent Successfully!" onclick="SEMICOLON.widget.notifications({ el: this }); return false;">Show Success</a>
+
+		<a href="#" class="btn btn-warning me-2" style="display:none" id="warningAlert" data-notify-type="warning" data-notify-msg="<i class='icon-warning-sign me-1'></i> Don't try to be too Smart!" onclick="SEMICOLON.widget.notifications({ el: this }); return false;">Show Warning</a>
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="mx-auto">
+							<a href="/" class="standard-logo" data-dark-logo="~/images/logo/2.png"><img src="~/images/logo/2.png" alt="Canvas Logo"></a>
+						</div><!-- #logo end -->
+
+					</div>
+				</div>
+			</div>
+		</header><!-- #header end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="tabs mx-auto mb-0 clearfix" id="tab-login-register" style="max-width: 500px;">
+						@RenderBody()
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="~/js/jquery.js"></script>
+	<script src="~/js/plugins.min.js"></script>
+	<!-- Date & Time Picker JS -->
+	<script src="~/js/components/moment.js"></script>
+	<script src="~/js/components/timepicker.js"></script>
+	<script src="~/js/components/datepicker.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="js/components/daterangepicker.js"></script>
+	<script>
+		$(function () {
+			$('.component-datepicker.default').datepicker({
+				autoclose: true,
+				startDate: "today",
+			});
+
+			$('.component-datepicker.today').datepicker({
+				autoclose: true,
+				startDate: "today",
+				todayHighlight: true
+			});
+
+			$('.component-datepicker.past-enabled').datepicker({
+				autoclose: true,
+			});
+
+			$('.component-datepicker.format').datepicker({
+				autoclose: true,
+				format: "dd-mm-yyyy",
+			});
+
+			$('.component-datepicker.autoclose').datepicker();
+
+			$('.component-datepicker.disabled-week').datepicker({
+				autoclose: true,
+				daysOfWeekDisabled: "0"
+			});
+
+			$('.component-datepicker.highlighted-week').datepicker({
+				autoclose: true,
+				daysOfWeekHighlighted: "0"
+			});
+
+			$('.component-datepicker.mnth').datepicker({
+				autoclose: true,
+				minViewMode: 1,
+				format: "mm/yy"
+			});
+
+			$('.component-datepicker.multidate').datepicker({
+				multidate: true,
+				multidateSeparator: " , "
+			});
+
+			$('.component-datepicker.input-daterange').datepicker({
+				autoclose: true
+			});
+
+			$('.component-datepicker.inline-calendar').datepicker();
+
+			$('.datetimepicker').datetimepicker({
+				showClose: true
+			});
+
+			$('.datetimepicker1').datetimepicker({
+				format: 'LT',
+				showClose: true
+			});
+
+			$('.datetimepicker2').datetimepicker({
+				inline: true,
+				sideBySide: true
+			});
+
+			$('.datetimepicker3,.datetimepicker4').datetimepicker();
+
+			// .daterange1
+			$(".daterange1").daterangepicker({
+				"buttonClasses": "button button-rounded button-mini m-0",
+				"applyClass": "button-color",
+				"cancelClass": "button-light"
+			});
+
+			// .daterange2
+			$(".daterange2").daterangepicker({
+				"opens": "center",
+				timePicker: true,
+				timePickerIncrement: 30,
+				locale: {
+					format: 'MM/DD/YYYY h:mm A'
+				},
+				"buttonClasses": "button button-rounded button-mini m-0",
+				"applyClass": "button-color",
+				"cancelClass": "button-light"
+			});
+
+			// .daterange3
+			$(".daterange3").daterangepicker({
+				singleDatePicker: true,
+				showDropdowns: true
+			},
+				function (start, end, label) {
+					var years = moment().diff(start, 'years');
+					alert("You are " + years + " years old.");
+				});
+
+			// reportrange
+			function cb(start, end) {
+				$(".reportrange span").html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+			}
+			cb(moment().subtract(29, 'days'), moment());
+
+			$(".reportrange").daterangepicker({
+				"buttonClasses": "button button-rounded button-mini m-0",
+				"applyClass": "button-color",
+				"cancelClass": "button-light",
+				ranges: {
+					'Today': [moment(), moment()],
+					'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+					'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+					'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+					'This Month': [moment().startOf('month'), moment().endOf('month')],
+					'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+				}
+			}, cb);
+
+			// .daterange4
+			$(".daterange4").daterangepicker({
+				autoUpdateInput: false,
+				locale: {
+					cancelLabel: 'Clear'
+				},
+				"buttonClasses": "button button-rounded button-mini m-0",
+				"applyClass": "button-color",
+				"cancelClass": "button-light"
+			});
+
+			$(".daterange4").on('apply.daterangepicker', function (ev, picker) {
+				$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+			});
+
+			$(".daterange4").on('cancel.daterangepicker', function (ev, picker) {
+				$(this).val('');
+			});
+
+		});
+
+	</script>
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="~/js/functions.js"></script>
+	<script src="~/js/loginpage/loginandsignupjs.js"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

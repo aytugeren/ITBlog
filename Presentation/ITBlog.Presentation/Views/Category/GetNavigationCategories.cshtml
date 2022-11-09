@@ -16,21 +16,29 @@
             @foreach (var mainCategory in Model)
             {
                 <li class="menu-item">
-                    <a class="menu-link" href="@mainCategory.Key.CategoryUrl/@mainCategory.Key.Id"><div>@Html.Raw(mainCategory.Key.CategoryName)</div></a>
-
-                @if (mainCategory.Value != null)
-                {
-                    @if(mainCategory.Value.Count > 0){
-                        <ul class="sub-menu-container">
-                            @foreach (var subCategory in mainCategory.Value)
-                            {
-                                <li class="menu-item">
-                                    <a class="menu-link" href="@subCategory.CategoryUrl/@subCategory.Id"><div>@subCategory.CategoryName</div></a>
-                                </li>
-                            }
-                        </ul>
+                    @if (mainCategory.Key.CategoryName == "Anasayfa" || mainCategory.Key.CategoryName == "Hakkimizda")
+                    {
+                        <a class="menu-link" href="@mainCategory.Key.CategoryUrl"><div>@Html.Raw(mainCategory.Key.CategoryName)</div></a>
                     }
-                }
+                    else
+                    {
+                        <a class="menu-link" href="@mainCategory.Key.CategoryUrl/@mainCategory.Key.Id"><div>@Html.Raw(mainCategory.Key.CategoryName)</div></a>
+                    }
+
+                    @if (mainCategory.Value != null)
+                    {
+                        @if (mainCategory.Value.Count > 0)
+                        {
+                            <ul class="sub-menu-container">
+                                @foreach (var subCategory in mainCategory.Value)
+                                {
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="@subCategory.CategoryUrl/@subCategory.Id"><div>@subCategory.CategoryName</div></a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    }
                 </li>
             }
         }

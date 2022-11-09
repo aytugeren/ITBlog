@@ -32,5 +32,32 @@ namespace ITBlog.Business.UserServiceFolder
 
             return default(UserDTO);
         }
+
+        public UserDTO GetUserByUserName(string userName)
+        {
+            var user = _userRepository.Query(x => x.UserName == userName, string.Empty);
+
+            if (user.Count > 0)
+            {
+                return _mapper.Map<UserDTO>(user.FirstOrDefault());
+            }
+
+            return default(UserDTO);
+        }
+
+        public bool InserToUser(UserDTO model)
+        {
+            try
+            {
+                model.Id = Guid.NewGuid();
+                _userRepository.Insert(_mapper.Map<User>(model));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
     }
 }

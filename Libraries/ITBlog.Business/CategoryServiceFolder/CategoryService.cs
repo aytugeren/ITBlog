@@ -24,7 +24,7 @@ namespace ITBlog.Business.CategoryServiceFolder
 
         public CategoryDTO GetCategoryById(Guid id)
         {
-            var category = _categoryRepository.Query(x => x.Id == id, "Posts|Posts.Post|Posts.Post.Comments").FirstOrDefault();
+            var category = _categoryRepository.Query(x => x.Id == id, "Posts|Posts.Post|Posts.Post.Comments|Posts.Post.Author").FirstOrDefault();
 
             if (category != null)
             {

@@ -20,10 +20,10 @@
                         <div class="col ps-3">
                             <div class="entry-title">
                                 @if (post.Post.FirstContent.Length > 20){
-                                    <h4><a href="/@post.Post.Id">@post.Post.FirstContent.Substring(0,20)...</a></h4>
+                                    <h4><a href="Post/GetPostById/@post.Post.Id">@post.Post.FirstContent.Substring(0,20)...</a></h4>
                                 }
                                 else{
-                                    <h4><a href="/@post.Post.Id">@post.Post.FirstContent</a></h4>
+                                    <h4><a href="Post/GetPostById/@post.Post.Id">@post.Post.FirstContent</a></h4>
                                 }
                             </div>
                             <div class="entry-meta">
