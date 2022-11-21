@@ -5,7 +5,7 @@ let infoAlert = document.getElementById("infoAlert");
 let errorAlert = document.getElementById("errorAlert");
 let warningAlert = document.getElementById("warningAlert");
 
-let baseUrl = window.location.href;
+let baseUrl = window.location.origin + "/";
 let port = window.location.port;
 
 subButton.addEventListener("click", async function () {

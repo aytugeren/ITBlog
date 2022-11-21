@@ -65,8 +65,8 @@ namespace ITBlog.Presentation.Controllers.PostFolder
                 var comments = _commentService.GetCommentsByPostId(post.Id);
 
                 model.Post = post;
-                model.RecentPosts = dayBeforePosts;
-                model.RelatedPosts = relatedPosts;
+                model.RecentPosts = dayBeforePosts.Where(x => x.Id != id).ToList();
+                model.RelatedPosts = relatedPosts.Where(x => !dayBeforePosts.Select(y => y.Id).Contains(x.Id) && x.Id != id).ToList();
                 model.Comments = comments != null ? comments : new List<CommentDTO>();
                 model.Author = post.Author;
 

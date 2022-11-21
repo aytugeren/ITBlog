@@ -131,38 +131,54 @@ submitButton.addEventListener("click", async function () {
                                     } else {
                                         errorAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Kullanıcı Oluşturulurken Hata Meydana Geldi!");
                                         errorAlert.click();
+                                        submitButton.removeAttribute("style")
+                                        loadingSubmit.setAttribute("style", "display:none;")
                                     }
                                 }
                                 else {
                                     warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Parola Kurallara Uymuyor!");
                                     warningAlert.click();
+                                    submitButton.removeAttribute("style")
+                                    loadingSubmit.setAttribute("style", "display:none;")
                                 }
                             }
                             else {
                                 warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Parolalar Uyuşmuyor!");
                                 warningAlert.click();
+                                submitButton.removeAttribute("style")
+                                loadingSubmit.setAttribute("style", "display:none;")
                             }
                         }
                         else {
                             warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Soyisim Alanı Boş!");
                             warningAlert.click();
+                            submitButton.removeAttribute("style")
+                            loadingSubmit.setAttribute("style", "display:none;")
                         }
                     } else {
                         warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Ad Alanı Boş!");
                         warningAlert.click();
+                        submitButton.removeAttribute("style")
+                        loadingSubmit.setAttribute("style", "display:none;")
                     }
                 }
                 else {
                     warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Mail Zaten Var!");
                     warningAlert.click();
+                    submitButton.removeAttribute("style")
+                    loadingSubmit.setAttribute("style", "display:none;")
                 }
             }
             else {
                 warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Email Alanı Boş!");
                 warningAlert.click();
+                submitButton.removeAttribute("style")
+                loadingSubmit.setAttribute("style", "display:none;")
             }
         }
         else {
+            submitButton.removeAttribute("style")
+            loadingSubmit.setAttribute("style", "display:none;")
             errorAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Kullanıcı Zaten Var!");
             errorAlert.click();
         }
@@ -170,6 +186,8 @@ submitButton.addEventListener("click", async function () {
     else {
         warningAlert.setAttribute("data-notify-msg", "<i class='icon-ok-sign me-1'></i> Kullanıcı Adı Alanı Boş!");
         warningAlert.click();
+        submitButton.removeAttribute("style")
+        loadingSubmit.setAttribute("style", "display:none;")
     }
 })
 
