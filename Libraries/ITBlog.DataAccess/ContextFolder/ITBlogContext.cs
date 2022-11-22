@@ -19,7 +19,7 @@ namespace ITBlog.DataAccess.ContextFolder
 {
     public class ITBlogContext : DbContext
     {
-        public ITBlogContext() 
+        public ITBlogContext()
         {
 
         }
@@ -45,6 +45,7 @@ namespace ITBlog.DataAccess.ContextFolder
             modelBuilder.ApplyConfiguration(new SocialMediaMapping());
             modelBuilder.ApplyConfiguration(new UserMapping());
             modelBuilder.ApplyConfiguration(new CommentMapping());
+            modelBuilder.ApplyConfiguration(new ProjectMapping());
         }
 
         public DbSet<Category> tblCategory { get; set; }
@@ -74,5 +75,7 @@ namespace ITBlog.DataAccess.ContextFolder
         public DbSet<Comment> tblComment { get; set; }
 
         public DbSet<User> tblUser { get; set; }
+
+        public DbSet<Project> tblProject { get; set; }
     }
 }

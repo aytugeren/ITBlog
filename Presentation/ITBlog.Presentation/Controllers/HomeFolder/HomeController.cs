@@ -83,5 +83,10 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
 
             return PartialView();
         }
+
+        public IActionResult AboutMe()
+        {
+            return View();
+        }
     }
 }

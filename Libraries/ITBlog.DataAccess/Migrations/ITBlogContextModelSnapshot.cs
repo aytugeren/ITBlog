@@ -22,6 +22,21 @@ namespace ITBlog.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("AuthorProject", b =>
+                {
+                    b.Property<Guid>("AuthorsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProjectsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AuthorsId", "ProjectsId");
+
+                    b.HasIndex("ProjectsId");
+
+                    b.ToTable("AuthorProject");
+                });
+
             modelBuilder.Entity("AuthorSocialMedia", b =>
                 {
                     b.Property<Guid>("AuthorsId")
@@ -43,6 +58,14 @@ namespace ITBlog.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AboutMe")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorAim")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("AuthorBirthday")
                         .HasColumnType("datetime2");
 
@@ -58,10 +81,16 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<string>("AuthorSecondName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CompletedProject")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(6147));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 578, DateTimeKind.Utc).AddTicks(3370));
+
+                    b.Property<int>("HoursPerWeek")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -73,6 +102,9 @@ namespace ITBlog.DataAccess.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<int>("LinesOfCode")
+                        .HasColumnType("int");
+
                     b.Property<int>("PostCount")
                         .HasColumnType("int");
 
@@ -82,6 +114,49 @@ namespace ITBlog.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tblAuthor", (string)null);
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorFolder.Project", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 585, DateTimeKind.Utc).AddTicks(2763));
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("ProjectDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ProjectId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ProjectLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjectName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("tblProject", (string)null);
                 });
 
             modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorPictureFolder.AuthorPicture", b =>
@@ -95,7 +170,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 625, DateTimeKind.Utc).AddTicks(2977));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 584, DateTimeKind.Utc).AddTicks(517));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -141,7 +216,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 19, 34, 27, 623, DateTimeKind.Local).AddTicks(5213));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 22, 15, 53, 578, DateTimeKind.Local).AddTicks(2459));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -178,7 +253,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 625, DateTimeKind.Utc).AddTicks(6962));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 584, DateTimeKind.Utc).AddTicks(4288));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -218,7 +293,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 626, DateTimeKind.Utc).AddTicks(3676));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 585, DateTimeKind.Utc).AddTicks(1146));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -260,7 +335,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(8256));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 578, DateTimeKind.Utc).AddTicks(5202));
 
                     b.Property<int>("Height")
                         .HasColumnType("int");
@@ -324,7 +399,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(9263));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 578, DateTimeKind.Utc).AddTicks(6209));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -359,7 +434,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 624, DateTimeKind.Utc).AddTicks(5560));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 583, DateTimeKind.Utc).AddTicks(3069));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -396,7 +471,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 623, DateTimeKind.Utc).AddTicks(3187));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 578, DateTimeKind.Utc).AddTicks(310));
 
                     b.Property<string>("FirstContent")
                         .HasColumnType("nvarchar(max)");
@@ -438,7 +513,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 624, DateTimeKind.Utc).AddTicks(1482));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 578, DateTimeKind.Utc).AddTicks(8556));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -474,7 +549,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 624, DateTimeKind.Utc).AddTicks(9342));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 583, DateTimeKind.Utc).AddTicks(6945));
 
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
@@ -508,7 +583,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 626, DateTimeKind.Utc).AddTicks(347));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 584, DateTimeKind.Utc).AddTicks(8353));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -549,7 +624,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 19, 34, 27, 625, DateTimeKind.Local).AddTicks(9441));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 22, 15, 53, 584, DateTimeKind.Local).AddTicks(7255));
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
@@ -589,7 +664,7 @@ namespace ITBlog.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 7, 16, 34, 27, 626, DateTimeKind.Utc).AddTicks(1738));
+                        .HasDefaultValue(new DateTime(2022, 11, 22, 19, 15, 53, 584, DateTimeKind.Utc).AddTicks(9349));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -636,6 +711,36 @@ namespace ITBlog.DataAccess.Migrations
                     b.ToTable("tblUser", (string)null);
                 });
 
+            modelBuilder.Entity("PictureProject", b =>
+                {
+                    b.Property<Guid>("PicturesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProjectsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PicturesId", "ProjectsId");
+
+                    b.HasIndex("ProjectsId");
+
+                    b.ToTable("PictureProject");
+                });
+
+            modelBuilder.Entity("AuthorProject", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Author", null)
+                        .WithMany()
+                        .HasForeignKey("AuthorsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Project", null)
+                        .WithMany()
+                        .HasForeignKey("ProjectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("AuthorSocialMedia", b =>
                 {
                     b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Author", null)
@@ -649,6 +754,13 @@ namespace ITBlog.DataAccess.Migrations
                         .HasForeignKey("SocialMediasId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorFolder.Project", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Project", null)
+                        .WithMany("Projects")
+                        .HasForeignKey("ProjectId");
                 });
 
             modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorPictureFolder.AuthorPicture", b =>
@@ -776,11 +888,31 @@ namespace ITBlog.DataAccess.Migrations
                     b.Navigation("Post");
                 });
 
+            modelBuilder.Entity("PictureProject", b =>
+                {
+                    b.HasOne("ITBlog.Entities.Concrete.PictureFolder.Picture", null)
+                        .WithMany()
+                        .HasForeignKey("PicturesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ITBlog.Entities.Concrete.AuthorFolder.Project", null)
+                        .WithMany()
+                        .HasForeignKey("ProjectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorFolder.Author", b =>
                 {
                     b.Navigation("Pictures");
 
                     b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("ITBlog.Entities.Concrete.AuthorFolder.Project", b =>
+                {
+                    b.Navigation("Projects");
                 });
 
             modelBuilder.Entity("ITBlog.Entities.Concrete.Category", b =>

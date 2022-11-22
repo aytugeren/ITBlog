@@ -23,6 +23,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcR2V0TmF2aWdhdGlvbkNhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Home/AboutMe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dE1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ogqt0c1cgx
+
+[D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_LayoutAboutMe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBYm91dE1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ka6cbj8cdj
 
 [D:/VisualStudio/Projects/ASP.NET Core-Blog/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=

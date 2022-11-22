@@ -1,4 +1,5 @@
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net6.0\ITBlog.Entities.deps.json
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net6.0\ITBlog.Entities.runtimeconfig.json
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net6.0\ITBlog.Entities.dll
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net6.0\ITBlog.Entities.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.csproj.AssemblyReference.cache
@@ -7,8 +8,7 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.AssemblyInfo.cs
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.csproj.CoreCompileInputs.cache
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.dll
-D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ref\ITBlog.Entities.dll
-D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\refint\ITBlog.Entities.dll
-D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net6.0\ITBlog.Entities.runtimeconfig.json
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ITBlog.Entities.genruntimeconfig.cache
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net6.0\ref\ITBlog.Entities.dll

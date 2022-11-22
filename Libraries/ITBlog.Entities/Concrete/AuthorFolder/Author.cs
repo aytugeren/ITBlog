@@ -24,6 +24,16 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
 
         public int PostCount { get; set; }
 
+        public string AboutMe { get; set; }
+
+        public string AuthorAim { get; set; }
+
+        public int HoursPerWeek { get; set; }
+
+        public int LinesOfCode { get; set; }
+
+        public int CompletedProject { get; set; }
+
         public string? AuthorRole { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
@@ -31,5 +41,7 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
         public virtual ICollection<AuthorPicture> Pictures { get; set; }
 
         public virtual ICollection<SocialMedia> SocialMedias { get; set; }
+
+        public virtual ICollection<Project> Projects { get; set; }
     }
 }
