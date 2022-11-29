@@ -21,6 +21,35 @@ namespace ITBlog.Business.UserServiceFolder
             _mapper = mapper;
         }
 
+        public bool CheckUser(UserDTO userDTO)
+        {
+            bool isUserAcceptable = false;
+            if (userDTO != null)
+            {
+                if (userDTO != default(UserDTO))
+                {
+                    if (!string.IsNullOrEmpty(userDTO.Email))
+                    {
+                        var user = _userRepository.Query(x => x.Email == userDTO.Email, string.Empty).FirstOrDefault();
+                        if (user != null)
+                        {
+                            isUserAcceptable = user.Password == userDTO.Password;
+                        }
+                    }
+                    else if (!string.IsNullOrEmpty(userDTO.UserName))
+                    {
+                        var user = _userRepository.Query(x => x.Email == userDTO.UserName, string.Empty).FirstOrDefault();
+                        if (user != null)
+                        {
+                            isUserAcceptable = user.Password == userDTO.Password;
+                        }
+                    }
+                }
+            }
+
+            return isUserAcceptable;
+        }
+
         public UserDTO GetUserByEmail(string email)
         {
             var user = _userRepository.Query(x => x.Email == email, string.Empty);

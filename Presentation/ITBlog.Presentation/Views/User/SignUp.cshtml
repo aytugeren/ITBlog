@@ -13,7 +13,8 @@
         <li class="inline-block"><a href="#tab-register">Kayıt Ol</a></li>
         <li class="inline-block"><a href="#tab-login">Giriş</a></li>
     }
-    else if (!string.IsNullOrEmpty(Model.Email) && !string.IsNullOrEmpty(Model.Password)){
+    else if (!string.IsNullOrEmpty(Model.Email) && !string.IsNullOrEmpty(Model.Password))
+    {
         <li class="inline-block"><a href="#tab-login">Giriş</a></li>
         <li class="inline-block"><a href="#tab-register">Kayıt Ol</a></li>
     }
@@ -29,158 +30,160 @@
     <div class="tab-content" id="tab-login">
         <div class="card mb-0">
             <div class="card-body" style="padding: 40px;">
-                <form id="login-form" name="login-form" class="mb-0" action="#" method="post">
-
+                <form id="login-form" name="login-form" class="mb-0" action="/User/Login" method="post">
                     <div class="row">
                         <div class="col-12 form-group">
                             <label for="login-form-username">Username:</label>
-                            @if (!string.IsNullOrEmpty(Model.Email)){
-                                <input type="text" id="login-form-username" name="login-form-username" value="@Model.Email" class="form-control" />
+                            @if (!string.IsNullOrEmpty(Model.Email))
+                            {
+                                <input type="text" id="Username" name="Username" value="@Model.Email" class="form-control" />
                             }
-                            else{
-                                <input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
+                            else
+                            {
+                                <input type="text" id="Username" name="Username" value="" class="form-control" />
                             }
                         </div>
 
                         <div class="col-12 form-group">
                             <label for="login-form-password">Parola:</label>
-                            @if (!string.IsNullOrEmpty(Model.Password)){
-                                <input type="password" id="login-form-password" name="login-form-password" value="@Model.Password" class="form-control" />
+                            @if (!string.IsNullOrEmpty(Model.Password))
+                            {
+                                <input type="password" id="Password" name="Password" value="@Model.Password" class="form-control" />
                             }
-                            else{
-                                <input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
+                            else
+                            {
+                                <input type="password" id="Password" name="Password" value="" class="form-control" />
                             }
                         </div>
 
                         <div class="col-12 form-group">
-                            <button class="button button-3d button-black m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+                            <button type="submit" class="button button-3d button-black m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
                             <a href="#" class="float-end">Şifremi Unuttum <i class="icon-fish"></i></a>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="tab-content" id="tab-register">
-        <div class="card mb-0">
-            <div class="card-body" style="padding: 40px;">
+<div class="tab-content" id="tab-register">
+    <div class="card mb-0">
+        <div class="card-body" style="padding: 40px;">
 
-                <form id="register-form" name="register-form" class="row mb-0" action="#" method="post">
-                    <div class="style-msg successmsg" style="display:none;" id="welcomeBox">
-                        <div class="sb-msg" id="welcomeMessage"><i class="icon-thumbs-up"></i><strong>Well done!</strong> You successfully read this important alert message.</div>
+            <form id="register-form" name="register-form" class="row mb-0" action="#" method="post">
+                <div class="style-msg successmsg" style="display:none;" id="welcomeBox">
+                    <div class="sb-msg" id="welcomeMessage"><i class="icon-thumbs-up"></i><strong>Well done!</strong> You successfully read this important alert message.</div>
+                </div>
+                <div class="spinner-grow spinner-grow-sm-me-2" role="status" style="display:none;" id="loading">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="alert alert-danger" role="alert" style="display:none;" id="errorMessage"></p>
+                <div class="col-12 form-group">
+                    <label for="register-form-name">Username:</label>
+                    <input type="text" id="register-form-username" name="Username" value="" class="form-control" required />
+                </div>
+                <div class="style-msg2" style="background-color: #EEE;">
+                    <div class="msgtitle">Kullanıcı Adı Belirlerken Kurallarımız Var:</div>
+                    <div class="sb-msg" id="messageForPassword">
+                        <ul>
+                            <li>Özel Karakter Kullanımını Olası Güvenlik Açıkları Nedeni İle Yasakladık. [\!\'@@'\#\$\%\^\&\*\(\)_+\/\*\-\] Karakterlerini Kullanımı Yasaktır.</li>
+                            <li>Kullanıcı Adı Uzunluğu 30 Karakteri Geçmemelidir!</li>
+                            <li>Kullanıcı Adları içerisinde uygunsuz, cinsel içerikli isimlendirmeler bulundurmak yasaktır.</li>
+                        </ul>
                     </div>
-                    <div class="spinner-grow spinner-grow-sm-me-2" role="status" style="display:none;" id="loading">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p class="alert alert-danger" role="alert" style="display:none;" id="errorMessage"></p>
-                    <div class="col-12 form-group">
-                        <label for="register-form-name">Username:</label>
-                        <input type="text" id="register-form-username" name="Username" value="" class="form-control" required />
-                    </div>
-                    <div class="style-msg2" style="background-color: #EEE;">
-                        <div class="msgtitle">Kullanıcı Adı Belirlerken Kurallarımız Var:</div>
-                        <div class="sb-msg" id="messageForPassword">
-                            <ul>
-                                <li>Özel Karakter Kullanımını Olası Güvenlik Açıkları Nedeni İle Yasakladık. [\!\'@@'\#\$\%\^\&\*\(\)_+\/\*\-\] Karakterlerini Kullanımı Yasaktır.</li>
-                                <li>Kullanıcı Adı Uzunluğu 30 Karakteri Geçmemelidir!</li>
-                                <li>Kullanıcı Adları içerisinde uygunsuz, cinsel içerikli isimlendirmeler bulundurmak yasaktır.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 form-group">
-                        <label for="register-form-name">Ad*:</label>
-                        <input type="text" id="register-form-name" name="Name" class="form-control" required />
-                    </div>
-                    <div class="col-12 form-group">
-                        <label for="register-form-secondName">İkinci Ad[Opsiyonel]:</label>
-                        <input type="text" id="register-form-secondname" name="SecondName" value="" class="form-control" />
-                    </div>
-                    <div class="col-12 form-group">
-                        <label for="register-form-lastName">Soyisim*:</label>
-                        <input type="text" id="register-form-lastname" name="Surname" value="" class="form-control" required />
-                    </div>
+                </div>
+                <div class="col-12 form-group">
+                    <label for="register-form-name">Ad*:</label>
+                    <input type="text" id="register-form-name" name="Name" class="form-control" required />
+                </div>
+                <div class="col-12 form-group">
+                    <label for="register-form-secondName">İkinci Ad[Opsiyonel]:</label>
+                    <input type="text" id="register-form-secondname" name="SecondName" value="" class="form-control" />
+                </div>
+                <div class="col-12 form-group">
+                    <label for="register-form-lastName">Soyisim*:</label>
+                    <input type="text" id="register-form-lastname" name="Surname" value="" class="form-control" required />
+                </div>
 
-                    <div class="col-12 form-group">
-                        <label for="">Doğum Günü*:</label>
-                        <input type="text" value="" id="register-form-birthday" name="Birthday" class="form-control text-start component-datepicker default" placeholder="MM/DD/YYYY" required>
+                <div class="col-12 form-group">
+                    <label for="">Doğum Günü*:</label>
+                    <input type="text" value="" id="register-form-birthday" name="Birthday" class="form-control text-start component-datepicker default" placeholder="MM/DD/YYYY" required>
+                </div>
+                <div class="style-msg2" style="background-color: #EEE;">
+                    <div class="msgtitle">Neden Bu Bilgiyi İstiyoruz?</div>
+                    <div class="sb-msg">
+                        <ul>
+                            <li>Kullanıcıların Doğum Günlerine Özel Belirlenen Fırsatlardan Sizleri Kolayca Haberdar Edebilmek İçin Bu Bilgi Bizim İçin Gerekli</li>
+                            <li>Kullanıcılar hakkında Şifre Unutma/Herhangi Bir Kullanıcı Bazlı Durumda Ayırt Edici Bilgi İçin Gerekli</li>
+                            <li>Üyelerimizin Özel Günlerinde Yanlız Bırakmak İstemiyoruz :)</li>
+                        </ul>
                     </div>
-                    <div class="style-msg2" style="background-color: #EEE;">
-                        <div class="msgtitle">Neden Bu Bilgiyi İstiyoruz?</div>
-                        <div class="sb-msg">
-                            <ul>
-                                <li>Kullanıcıların Doğum Günlerine Özel Belirlenen Fırsatlardan Sizleri Kolayca Haberdar Edebilmek İçin Bu Bilgi Bizim İçin Gerekli</li>
-                                <li>Kullanıcılar hakkında Şifre Unutma/Herhangi Bir Kullanıcı Bazlı Durumda Ayırt Edici Bilgi İçin Gerekli</li>
-                                <li>Üyelerimizin Özel Günlerinde Yanlız Bırakmak İstemiyoruz :)</li>
-                            </ul>
-                        </div>
-                    </div>
+                </div>
 
-                    @if (!string.IsNullOrEmpty(Model.Email))
-                    {
-                        <div class="col-12 form-group">
-                            <label for="register-form-email">Email Adresi*:</label>
-                            <input type="text" id="register-form-email" name="Email" class="form-control" value="@Model.Email" required />
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="col-12 form-group">
-                            <label for="register-form-email">Email Adresi*:</label>
-                            <input type="text" id="register-form-email" name="Email" value="" class="form-control" required />
-                        </div>
-                    }
+                @if (!string.IsNullOrEmpty(Model.Email))
+                {
                     <div class="col-12 form-group">
-                        <label for="register-form-password">Parola*:</label>
-                        <input type="password" id="register-form-password" name="Password" class="form-control" required />
+                        <label for="register-form-email">Email Adresi*:</label>
+                        <input type="text" id="register-form-email" name="Email" class="form-control" value="@Model.Email" required />
                     </div>
-                    <div class="style-msg2" style="background-color: #EEE;">
-                        <div class="msgtitle">Parola Belirlerken Kurallarımız Var:</div>
-                        <div class="sb-msg">
-                            <ul>
-                                <li id="BigCharachterMessage">Parolanız en az 1 adet büyük harf içermelidir.</li>
-                                <li id="SmallCharacterMessage">Parolanız en az 1 adet küçük harf içermelidir.</li>
-                                <li id="LengthCharacterMessage">Parolanız en az 10 karakterli olmalıdır.</li>
-                                <li id="SpecialCharacterMessage">Parolanız en az 1 adet noktalama işareti içermelidir.</li>
-                                <li id="NumericCharacterMessage">Parolanız en az 1 adet rakam içermelidir.</li>
-                                <li id="RepeatedCharacterMessage">Parolanız tekrar eden rakamlar ve/veya karakter içermemelidir.</li>
-                                <li id="SpaceCharacterMessage">Parolanız boşluk içermemelidir.</li>
-                                <li>Bu kurallar sizin hesap güvenliğiniz için belirlenen kurallardır :)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="alert alert-danger" role="alert" style="display:none;" id="errorMessageRePassword"></p>
+                }
+                else
+                {
                     <div class="col-12 form-group">
-                        <label for="register-form-repassword">Parola Tekrar*:</label>
-                        <input type="password" id="register-form-repassword" name="RePassword" class="form-control" />
+                        <label for="register-form-email">Email Adresi*:</label>
+                        <input type="text" id="register-form-email" name="Email" value="" class="form-control" required />
                     </div>
-                    <div style="display:none;" id="loadingSubmit">
-                        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-                        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                }
+                <div class="col-12 form-group">
+                    <label for="register-form-password">Parola*:</label>
+                    <input type="password" id="register-form-password" name="Password" class="form-control" required />
+                </div>
+                <div class="style-msg2" style="background-color: #EEE;">
+                    <div class="msgtitle">Parola Belirlerken Kurallarımız Var:</div>
+                    <div class="sb-msg">
+                        <ul>
+                            <li id="BigCharachterMessage">Parolanız en az 1 adet büyük harf içermelidir.</li>
+                            <li id="SmallCharacterMessage">Parolanız en az 1 adet küçük harf içermelidir.</li>
+                            <li id="LengthCharacterMessage">Parolanız en az 10 karakterli olmalıdır.</li>
+                            <li id="SpecialCharacterMessage">Parolanız en az 1 adet noktalama işareti içermelidir.</li>
+                            <li id="NumericCharacterMessage">Parolanız en az 1 adet rakam içermelidir.</li>
+                            <li id="SpaceCharacterMessage">Parolanız boşluk içermemelidir.</li>
+                            <li>Bu kurallar sizin hesap güvenliğiniz için belirlenen kurallardır :)</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="alert alert-danger" role="alert" style="display:none;" id="errorMessageRePassword"></p>
+                <div class="col-12 form-group">
+                    <label for="register-form-repassword">Parola Tekrar*:</label>
+                    <input type="password" id="register-form-repassword" name="RePassword" class="form-control" />
+                </div>
+                <div style="display:none;" id="loadingSubmit">
+                    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
     s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
     c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
-                        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
     C22.32,8.481,24.301,9.057,26.013,10.047z">
-                        <animateTransform attributeType="xml"
-                                          attributeName="transform"
-                                          type="rotate"
-                                          from="0 20 20"
-                                          to="360 20 20"
-                                          dur="0.5s"
-                                          repeatCount="indefinite" />
+                    <animateTransform attributeType="xml"
+                                      attributeName="transform"
+                                      type="rotate"
+                                      from="0 20 20"
+                                      to="360 20 20"
+                                      dur="0.5s"
+                                      repeatCount="indefinite" />
     </path>
   </svg>
-  <abbr id="infoMessageSubmit">Kontrol Ediliyor...</abbr>
-                    </div>
+                    <abbr id="infoMessageSubmit">Kontrol Ediliyor...</abbr>
+                </div>
 
-                    <div class="col-12 form-group">
-                        <button type="button" class="button button-3d button-black m-0" id="submit" name="Submit" value="register">Kayıt Ol</button>
-                    </div>
-                </form>
-            </div>
+                <div class="col-12 form-group">
+                    <button type="button" class="button button-3d button-black m-0" id="submit" name="Submit" value="register">Kayıt Ol</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
 </div>

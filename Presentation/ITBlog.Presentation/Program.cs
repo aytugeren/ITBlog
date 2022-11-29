@@ -19,7 +19,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
 MapperConfiguration config = ITBlogProfile.Configuration();
 
 IMapper mapper = config.CreateMapper();
@@ -47,6 +46,7 @@ builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddRazorPages().AddNewtonsoftJson();
 
 var app = builder.Build();
+app.UseAuthentication();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

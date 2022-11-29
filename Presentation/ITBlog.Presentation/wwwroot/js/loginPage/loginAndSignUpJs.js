@@ -17,12 +17,11 @@ let bigCharachterMessage = document.getElementById("BigCharachterMessage");
 let smallCharacterMessage = document.getElementById("SmallCharacterMessage");
 let lengthCharacterMessage = document.getElementById("LengthCharacterMessage");
 let specialCharacterMessage = document.getElementById("SpecialCharacterMessage");
-let repeatedCharacterMessage = document.getElementById("RepeatedCharacterMessage");
 let spaceCharacterMessage = document.getElementById("SpaceCharacterMessage");
 let numericCharacterMessage = document.getElementById("NumericCharacterMessage");
 let errorMessageRePassword = document.getElementById("errorMessageRePassword");
-let loadingSubmit = document.getElementById("loadingSubmit");
 let infoMessageSubmit = document.getElementById("infoMessageSubmit");
+let loginInfoMessageSubmit = document.getElementById("loginInfoMessageSubmit");
 let successAlert = document.getElementById("successAlert");
 let infoAlert = document.getElementById("infoAlert");
 let errorAlert = document.getElementById("errorAlert");
@@ -38,7 +37,7 @@ userName.addEventListener("input", function () {
 
     if (isTextIncludeWrongCharacter(text)) {
         errorMessage.removeAttribute("style");
-        errorMessage.innerHTML = "\n                        Dikkat Yasaklı Karakter Giriyorsunuz!\n                    "
+        errorMessage.innerHTML = "\n Dikkat Yasaklı Karakter Giriyorsunuz!\n ";
         userName.value = text.replace(/[!\.+_!@#$%^&*()\t\r\n\[\][/]/g, "");
     }
     else {
@@ -72,7 +71,6 @@ userName.addEventListener("blur", async function () {
         }
     }
 })
-
 
 password.addEventListener("input", function () {
     checkTheText(password.value);
@@ -206,6 +204,7 @@ async function getUserIsExist(controller, method, parametre) {
 }
 
 async function submitTheUser(controller, method, parametre) {
+    console.log(parametre);
     let url = baseUrl + "/" + controller + "/" + method;
     const response = await fetch(url, {
         method: 'POST',
@@ -219,7 +218,6 @@ async function submitTheUser(controller, method, parametre) {
 
     return jsonData;
 }
-
 
 function isTextIncludeWrongCharacter(text) {
     var result = text.match(/[!\.+_!@#$%^&*()\t\r\n\[\][/]/g);
@@ -287,11 +285,6 @@ function isTextIncludeSmallCharacter(text) {
     }
 }
 
-function isTextIncludeRepeatedCharacter(text) {
-    return /(.).*\1/.test(text);
-}
-
-
 function isTwoTextIsSame(text1, text2) {
     if (text1 === text2) {
         return true;
@@ -307,7 +300,6 @@ function checkTheText(text, isSubmit) {
     var isTextIncludeBig = isTextIncludeBigCharacter(text);
     var isTextIncludeSmall = isTextIncludeSmallCharacter(text);
     var isTextIncludeNumeric = isTextIncludeNumericCharacter(text);
-    var isTextIncludeRepeated = isTextIncludeRepeatedCharacter(text);
     var result = false;
     if (isTextIncludeWrong) {
         password.value = text.replace(/[!\.+_!@#$%^&*()\t\r\n\[\][/]/g, "");
@@ -351,14 +343,6 @@ function checkTheText(text, isSubmit) {
         numericCharacterMessage.removeAttribute("style");
         result = false;
     }
-    if (isTextIncludeRepeated) {
-        repeatedCharacterMessage.setAttribute("style", "color:red;")
-        result = false;
-    }
-    else {
-        repeatedCharacterMessage.setAttribute("style", "color:#BADA55;");
-        result = true;
-    }
     if (text.length > 10) {
         lengthCharacterMessage.setAttribute("style", "color:#BADA55;");
         result = true;
@@ -370,10 +354,10 @@ function checkTheText(text, isSubmit) {
 
     if (text.length === 0) {
         lengthCharacterMessage.removeAttribute("style");
-        repeatedCharacterMessage.removeAttribute("style");
         spaceCharacterMessage.removeAttribute("style");
         result = false;
     }
 
     return result;
 }
+

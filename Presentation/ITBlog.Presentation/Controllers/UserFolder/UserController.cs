@@ -1,7 +1,9 @@
 ﻿using ITBlog.Business.DTO;
 using ITBlog.Business.UserServiceFolder;
 using ITBlog.Presentation.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ITBlog.Presentation.Controllers.UserFolder
 {
@@ -19,6 +21,39 @@ namespace ITBlog.Presentation.Controllers.UserFolder
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            if (model != null)
+            {
+                UserDTO dtoModel = new UserDTO();
+                if (model.Username.Contains("@"))
+                {
+                    dtoModel.Email = model.Username;
+                }
+                else
+                {
+                    dtoModel.UserName = model.Username;
+                }
+                dtoModel.Password = model.Password;
+                if (_userService.CheckUser(dtoModel))
+                {
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, model.Username),
+                    };
+
+                    var userIdentity = new ClaimsIdentity(claims, "login");
+                    ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
+                    await HttpContext.SignInAsync(principal);
+
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return RedirectToAction("SignUp", "User");
+        }
+
         public IActionResult SignUp(UserDTO model, string email, string isFromRegister)
         {
             if (!string.IsNullOrEmpty(email))
@@ -27,7 +62,7 @@ namespace ITBlog.Presentation.Controllers.UserFolder
                 {
                     model.Password = isFromRegister;
                 }
-                model.Email = email;    
+                model.Email = email;
             }
             return View(model);
         }

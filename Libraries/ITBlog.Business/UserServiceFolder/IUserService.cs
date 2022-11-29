@@ -13,6 +13,8 @@ namespace ITBlog.Business.UserServiceFolder
 
         UserDTO GetUserByUserName(string userName);
 
+        bool CheckUser(UserDTO userDTO);
+
         bool InserToUser(UserDTO model);
     }
 }

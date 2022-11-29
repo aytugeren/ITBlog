@@ -4,6 +4,7 @@ using ITBlog.Business.DTO;
 using ITBlog.Business.PlaceServiceFolder;
 using ITBlog.Business.PostServiceFolder;
 using ITBlog.Presentation.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITBlog.Presentation.Controllers.PostFolder
@@ -53,6 +54,7 @@ namespace ITBlog.Presentation.Controllers.PostFolder
             return PartialView();
         }
 
+        [Authorize]
         public IActionResult GetPostById(Guid id)
         {
             PostDetailModel model = new PostDetailModel();
