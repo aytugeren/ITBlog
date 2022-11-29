@@ -37,11 +37,13 @@ namespace ITBlog.Presentation.Controllers.PostFolder
                 if (placeResult != null || placeResult != default(PlaceDTO))
                 {
                     var posts = _postService.GetPostsByPlace(placeResult.Id);
-
-                    foreach (var post in posts)
+                    if (posts != null)
                     {
-                        var author = _authorService.GetAuthorById(post.AuthorId);
-                        post.Author = author;
+                        foreach (var post in posts)
+                        {
+                            var author = _authorService.GetAuthorById(post.AuthorId);
+                            post.Author = author;
+                        }
                     }
 
                     return PartialView(posts);

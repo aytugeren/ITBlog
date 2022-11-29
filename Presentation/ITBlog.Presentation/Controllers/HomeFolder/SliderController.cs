@@ -21,8 +21,7 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
         public PartialViewResult GetSliders()
         {
             var pictures = _pictureService.GetPicturesByPlaceName(PicturePlaceEnums.Slider.ToString());
-
-            if (pictures.Any())
+            if (pictures != null)
             {
                 return PartialView(pictures);
             }

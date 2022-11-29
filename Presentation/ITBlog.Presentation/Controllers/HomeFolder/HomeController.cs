@@ -1,10 +1,12 @@
-﻿using ITBlog.Business.FooterServiceFolder;
+﻿using ITBlog.Business.AuthorServiceFolder;
+using ITBlog.Business.FooterServiceFolder;
 using ITBlog.Business.PictureServiceFolder;
 using ITBlog.Business.PlaceServiceFolder;
 using ITBlog.Business.PostServiceFolder;
 using ITBlog.Business.SocialMediaFolder;
 using ITBlog.Business.SubscriberServiceFolder;
 using ITBlog.Presentation.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -12,23 +14,23 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IFooterService _footerService;
         private readonly ISubscriberService _subscriberService;
         private readonly IPostService _postService;
         private readonly IPlaceService _placeService;
         private readonly IPictureService _pictureService;
         private readonly ISocialMediaService _socialMediaService;
+        private readonly IAuthorService _authorService;
 
-        public HomeController(ILogger<HomeController> logger, IFooterService footerService, ISubscriberService subscriberService, IPostService postService, IPlaceService placeService, IPictureService pictureService, ISocialMediaService socialMediaService)
+        public HomeController(IFooterService footerService, ISubscriberService subscriberService, IPostService postService, IPlaceService placeService, IPictureService pictureService, ISocialMediaService socialMediaService, IAuthorService authorService)
         {
-            _logger = logger;
             _footerService = footerService;
             _subscriberService = subscriberService;
             _postService = postService;
             _placeService = placeService;
             _pictureService = pictureService;
             _socialMediaService = socialMediaService;
+            _authorService = authorService;
         }
 
         public IActionResult Index()
@@ -86,7 +88,8 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
 
         public IActionResult AboutMe()
         {
-            return View();
+            var author = _authorService.GetAuthorByName("AytugEren");
+            return View(author);
         }
     }
 }

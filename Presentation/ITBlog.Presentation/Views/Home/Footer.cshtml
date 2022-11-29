@@ -44,18 +44,23 @@
                                 <h4>Kısa Yollar</h4>
 
                                 <ul>
-                                    @if (Model.Categories.Count > 0)
-                                    {
-                                        @foreach (var category in Model.Categories)
+                                    @if (Model.Categories != null){
+                                        @if (Model.Categories.Count > 0)
                                         {
-                                            if (category.CategoryName == "Anasayfa" || category.CategoryName == "Hakkimizda"){
-                                                <li><a href="@category.CategoryUrl">@Html.Raw(category.CategoryName)</a></li>
-                                            }
-                                            else{
-                                                <li><a href="@category.CategoryUrl/@category.Id">@Html.Raw(category.CategoryName)</a></li>
+                                            @foreach (var category in Model.Categories)
+                                            {
+                                                if (category.CategoryName == "Anasayfa" || category.CategoryName == "Hakkimizda")
+                                                {
+                                                    <li><a href="@category.CategoryUrl">@Html.Raw(category.CategoryName)</a></li>
+                                                }
+                                                else
+                                                {
+                                                    <li><a href="@category.CategoryUrl/@category.Id">@Html.Raw(category.CategoryName)</a></li>
+                                                }
                                             }
                                         }
                                     }
+
                                 </ul>
 
                             </div>

@@ -41,6 +41,8 @@ namespace ITBlog.Business.AutoMapperFolder
                 cfg.CreateMap<SocialMediaDTO, SocialMedia>().ReverseMap();
                 cfg.CreateMap<UserDTO, User>().ReverseMap();
                 cfg.CreateMap<CommentDTO, Comment>().ReverseMap();
+                cfg.CreateMap<SkillDTO, Skill>().ReverseMap();
+                cfg.CreateMap<ProjectDTO, Project>().ReverseMap();
             });
 
             return mapperConfiguration;

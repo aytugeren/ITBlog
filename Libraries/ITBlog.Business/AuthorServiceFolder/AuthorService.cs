@@ -31,5 +31,16 @@ namespace ITBlog.Business.AuthorServiceFolder
 
             return default(AuthorDTO);
         }
+
+        public AuthorDTO GetAuthorByName(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                var author = _authorRepository.Query(x => x.AuthorName + x.AuthorLastName == name, "Posts|SocialMedias|Projects|Skills").FirstOrDefault();
+                return _mapper.Map<AuthorDTO>(author);
+            }
+
+            return default(AuthorDTO);
+        }
     }
 }

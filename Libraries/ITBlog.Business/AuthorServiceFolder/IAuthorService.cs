@@ -10,5 +10,7 @@ namespace ITBlog.Business.AuthorServiceFolder
     public interface IAuthorService
     {
         AuthorDTO GetAuthorById(Guid id);
+
+        AuthorDTO GetAuthorByName(string name);
     }
 }

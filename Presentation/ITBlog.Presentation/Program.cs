@@ -12,6 +12,7 @@ using ITBlog.Business.SubscriberServiceFolder;
 using ITBlog.Business.SocialMediaFolder;
 using ITBlog.Business.CommentServiceFolder;
 using ITBlog.Business.UserServiceFolder;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,11 @@ IMapper mapper = config.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
 builder.Services.AddControllers();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/User/SignUp";
+        });
 builder.Services.AddTransient<ITBlogContext>();
 builder.Services.AddTransient(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddTransient<ICategoryService, CategoryService>();

@@ -87,7 +87,12 @@
                                                 <li><a href="#"><i class="icon-comments"></i> @item.Comments.Count</a></li>
                                             </ul>
                                         </div>
-                                        <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent.Substring(0,100))</div>
+                                        @if (item.SecondContent.Length >= 100){
+                                            <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent.Substring(0,100))</div>
+                                        }
+                                        else{
+                                            <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent)</div>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +127,14 @@
                                                 <li><a href="#"><i class="icon-comments"></i> @item.Comments.Count</a></li>
                                             </ul>
                                         </div>
-                                        <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent.Substring(0,100))</div>
+                                        @if (item.SecondContent.Length >= 100)
+                                        {
+                                            <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent.Substring(0,100))</div>
+                                        }
+                                        else
+                                        {
+                                            <div class="entry-content d-none d-xl-block">@Html.Raw(item.SecondContent)</div>
+                                        }
                                     </div>
                                 </div>
                             </div>

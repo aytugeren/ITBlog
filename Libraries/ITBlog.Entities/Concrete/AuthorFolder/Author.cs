@@ -43,5 +43,7 @@ namespace ITBlog.Entities.Concrete.AuthorFolder
         public virtual ICollection<SocialMedia> SocialMedias { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
+
+        public virtual ICollection<Skill> Skills { get; set; }
     }
 }

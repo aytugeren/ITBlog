@@ -46,6 +46,7 @@ namespace ITBlog.DataAccess.ContextFolder
             modelBuilder.ApplyConfiguration(new UserMapping());
             modelBuilder.ApplyConfiguration(new CommentMapping());
             modelBuilder.ApplyConfiguration(new ProjectMapping());
+            modelBuilder.ApplyConfiguration(new SkillMapping());
         }
 
         public DbSet<Category> tblCategory { get; set; }
@@ -77,5 +78,7 @@ namespace ITBlog.DataAccess.ContextFolder
         public DbSet<User> tblUser { get; set; }
 
         public DbSet<Project> tblProject { get; set; }
+
+        public DbSet<Skill> tblSkill { get; set; }
     }
 }
