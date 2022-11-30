@@ -20,7 +20,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Blog Single - Small Image Left Sidebar | Canvas</title>
+	<title>ITBlog</title>
 
 </head>
 
@@ -72,8 +72,8 @@
 						@await Html.RenderAction("GetNavigationCategories","Category")
 
 
-						<form class="top-search-form" action="search.html" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Arama.." autocomplete="off">
+						<form class="top-search-form" action="/Home/Search" method="get">
+							<input type="text" name="SearchText" class="form-control" value="" placeholder="Arama.." autocomplete="off">
 						</form>
 
 					</div>

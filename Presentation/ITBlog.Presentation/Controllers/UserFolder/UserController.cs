@@ -119,5 +119,11 @@ namespace ITBlog.Presentation.Controllers.UserFolder
 
             return new JsonResult(false);
         }
+
+        public IActionResult ForgotPassword(string forgotEmail)
+        {
+            ViewBag.ForgotEmail = forgotEmail;
+            return View();
+        }
     }
 }

@@ -38,6 +38,10 @@ namespace ITBlog.Presentation.Controllers.CategoryFolder
         [HttpGet(Name = "GetCategory/{Id}")]
         public IActionResult GetCategory(Guid Id)
         {
+            if (Id == Guid.Empty)
+            {
+                return RedirectToAction("Error", "Home");
+            }
             var model = new CategoryModel();
             var category = _categoryService.GetCategoryById(Id);
 

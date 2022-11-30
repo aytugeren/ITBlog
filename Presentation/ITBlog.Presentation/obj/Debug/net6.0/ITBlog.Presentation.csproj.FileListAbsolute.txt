@@ -81,3 +81,4 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentati
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.genruntimeconfig.cache
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ref\ITBlog.Presentation.dll
+D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutNone.cshtml.rz.scp.css

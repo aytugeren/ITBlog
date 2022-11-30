@@ -73,7 +73,7 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
                 var recentPosts = _postService.GetPostsByPlace(place.Id);
                 var pictures = _pictureService.GetPicturesByPlaceName("HomeSideBar");
                 var cvOfUser = _pictureService.GetCVByUserName("AytugEren");
-                var socialMedias = _socialMediaService.GetSocialMediasByUserName("aytuğeren");
+                var socialMedias = _socialMediaService.GetSocialMediasByUserName("aytugeren");
 
                 model.RecentPosts = recentPosts;
                 model.Pictures = pictures;
@@ -90,6 +90,20 @@ namespace ITBlog.Presentation.Controllers.HomeFolder
         {
             var author = _authorService.GetAuthorByName("AytugEren");
             return View(author);
+        }
+
+        [HttpGet]
+        public IActionResult Search(string SearchText)
+        {
+            var posts = _postService.GetPostsBySearchText(SearchText);
+            if (posts.Count > 0)
+            {
+                return View(posts);
+            }
+            else
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
     }
 }

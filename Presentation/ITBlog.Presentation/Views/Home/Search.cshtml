@@ -1,0 +1,82 @@
+﻿@using ITBlog.Presentation.Extensions
+@model List<ITBlog.Business.DTO.PostDTO>
+@{
+    Layout = "_LayoutPostDetail";
+}
+<!-- Content
+============================================= -->
+@if (Model != null)
+{
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+
+                <div class="row gutter-40 col-mb-80">
+                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent col-lg-9">
+
+                        <!-- Posts
+                        ============================================= -->
+                        <div id="posts" class="row grid-container gutter-30">
+
+                            @foreach (var item in Model)
+                            {
+                                var defultPicture = item.Pictures.Where(x => x.Picture.PictureIsDefault).FirstOrDefault();
+
+                                <div class="entry col-12">
+                                    <div class="grid-inner">
+                                        @if (defultPicture != null)
+                                        {
+                                            <div class="entry-image">
+                                                <a href="Post/GetPostById/@item.Id" data-lightbox="image"><img src="@defultPicture.Picture.PictureUrl" alt="Standard Post with Image"></a>
+                                            </div>
+                                        }
+
+                                        <div class="entry-title">
+                                            <h2><a href="/Post/GetPostById/@item.Id">@Html.Raw(item.FirstContent)</a></h2>
+                                        </div>
+                                        <div class="entry-meta">
+                                            <ul>
+                                                <li><i class="icon-calendar3"></i> @item.CreatedDateTime.ToString("dd-MM-yyyy")</li>
+                                                <li><a href="#"><i class="icon-user"></i> @item.Author.AuthorName @item.Author.AuthorLastName</a></li>
+                                                <li>
+                                                    <i class="icon-folder-open"></i>
+                                                    @foreach (var category in item.Categories)
+                                                    {
+                                                        <a href="@category.Category.CategoryUrl/@category.CategoryId">@category.Category.CategoryName</a>
+                                                    }
+                                                </li>
+                                                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> @item.Comments.Count Yorum</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="entry-content">
+                                            @if (item.SecondContent.Length > 200)
+                                            {
+                                                @Html.Raw(item.SecondContent.Substring(0,200))
+                                                <a href="blog-single.html" class="more-link">Read More</a>
+                                            }
+                                            else
+                                            {
+                                                @Html.Raw(item.SecondContent)
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div><!-- .postcontent end -->
+                    </div>
+
+                    <!-- Sidebar
+                    ============================================= -->
+                    <div class="sidebar col-lg-3">
+                        @await Html.RenderAction("GetHomeRightSiderBar","Home")
+                    </div><!-- .sidebar end -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- #content end -->
+}

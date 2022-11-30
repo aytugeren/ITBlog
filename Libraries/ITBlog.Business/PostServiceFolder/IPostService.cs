@@ -17,5 +17,7 @@ namespace ITBlog.Business.PostServiceFolder
         List<PostDTO> GetPostsByCategory(Guid[] categoryIds, Guid authorId);
 
         List<PostDTO> GetPostsByDeterminedDayBefore(int dayBefore);
+
+        List<PostDTO> GetPostsBySearchText(string searchText);
     }
 }

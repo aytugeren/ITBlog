@@ -143,7 +143,7 @@ namespace ITBlog.Business.PostServiceFolder
 
         public List<PostDTO> GetPostsByDeterminedDayBefore(int dayBefore)
         {
-            var posts = _postRepository.Query(x => x.CreatedDateTime >= DateTime.Now.AddDays(-dayBefore), "Author");
+            var posts = _postRepository.Query(x => x.CreatedDateTime >= DateTime.Now.AddDays(-dayBefore), "Author|Comments");
 
             if (posts != null)
             {
@@ -151,6 +151,13 @@ namespace ITBlog.Business.PostServiceFolder
             }
 
             return default(List<PostDTO>);
+        }
+
+        public List<PostDTO> GetPostsBySearchText(string searchText)
+        {
+            var posts = _postRepository.Query(x => x.SecondContent.Contains(searchText) || x.FirstContent.Contains(searchText), "Author|Comments");
+
+            return _mapper.Map<List<PostDTO>>(posts);
         }
     }
 }

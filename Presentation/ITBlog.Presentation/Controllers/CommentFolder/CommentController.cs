@@ -3,6 +3,7 @@ using ITBlog.Business.DTO;
 using ITBlog.Business.UserServiceFolder;
 using ITBlog.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ITBlog.Presentation.Controllers.CommentFolder
 {
@@ -25,17 +26,41 @@ namespace ITBlog.Presentation.Controllers.CommentFolder
         [HttpPost]
         public IActionResult AddComment(CommentModel model)
         {
-            var user = _userService.GetUserByEmail(model.Email);
+            var userEmail = User.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(x => x.Value).SingleOrDefault();
 
-            if (user == null)
+            if (!string.IsNullOrEmpty(userEmail))
             {
-                return RedirectToAction("SignUp", "User", new { email = model.Email });
-                //return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
+                var user = _userService.GetUserByEmail(userEmail);
+                if (user == null)
+                {
+                    return RedirectToAction("SignUp", "User");
+                    //return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
+                }
+                else
+                {
+                    CommentDTO modelDTO = new CommentDTO();
+                    modelDTO.PostId = model.PostId;
+                    modelDTO.CommentResult = model.Comment;
+                    modelDTO.CommentDateTime = DateTime.Now;
+                    modelDTO.CreatedDateTime = DateTime.Now;
+                    modelDTO.UserId = user.Id;
+                    modelDTO.Id = Guid.NewGuid();
+                    modelDTO.IsActive = true;
+                    modelDTO.IsDeleted = false;
+
+                    if (_commentService.InsertComment(modelDTO))
+                    {
+                        return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
+                    }
+                    else
+                    {
+                        return RedirectToAction("Error", "Home");
+                    }
+                }
             }
-            else
-            {
-                return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
-            }
+
+            return View();
+
         }
     }
 }

@@ -6,6 +6,8 @@ let birthday = document.getElementById("register-form-birthday");
 let email = document.getElementById("register-form-email");
 let password = document.getElementById("register-form-password");
 let repassword = document.getElementById("register-form-repassword");
+let forgotButton = document.getElementById("forgotButton");
+let forgotEmail = document.getElementById("forgotEmail");
 let submitButton = document.getElementById("submit");
 let errorMessage = document.getElementById("errorMessage");
 let errorMessagePassword = document.getElementById("errorMessagePassword");
@@ -30,7 +32,9 @@ let warningAlert = document.getElementById("warningAlert");
 const delay = ms => new Promise(res => setTimeout(res, ms));
 let baseUrl = window.location.origin;
 let port = window.location.port;
-
+forgotButton.addEventListener("click", function () {
+    console.log("asdfsdf");
+});
 userName.addEventListener("input", function () {
     var text = userName.value;
     welcomeBox.setAttribute("style", "display:none;");

@@ -32,5 +32,27 @@ namespace ITBlog.Business.CommentServiceFolder
 
 			return default(List<CommentDTO>);
 		}
+
+		public bool InsertComment(CommentDTO commentDTO)
+		{
+			if (commentDTO != null)
+			{
+				if (commentDTO != default(CommentDTO))
+				{
+					try
+					{
+						_commentRepository.Insert(_mapper.Map<Comment>(commentDTO));
+						return true;
+					}
+					catch (Exception ex)
+					{
+						return false;
+						throw;
+					}
+				}
+			}
+
+			return false;
+		}
 	}
 }

@@ -33,7 +33,7 @@
                 <form id="login-form" name="login-form" class="mb-0" action="/User/Login" method="post">
                     <div class="row">
                         <div class="col-12 form-group">
-                            <label for="login-form-username">Username:</label>
+                            <label for="login-form-username">Email:</label>
                             @if (!string.IsNullOrEmpty(Model.Email))
                             {
                                 <input type="text" id="Username" name="Username" value="@Model.Email" class="form-control" />
@@ -58,7 +58,9 @@
 
                         <div class="col-12 form-group">
                             <button type="submit" class="button button-3d button-black m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
-                            <a href="#" class="float-end">Şifremi Unuttum <i class="icon-fish"></i></a>
+                            <a href="#" class="float-end" data-bs-toggle="modal" data-bs-target="#myModal">Şifremi Unuttum <i class="icon-fish"></i></a>
+
+
                         </div>
                     </div>
                 </form>
@@ -186,4 +188,22 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="/User/ForgotPassword" method="get">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Şifreni Hatırlatalım</h4>
+                    <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="email" id="forgotEmail" name="forgotEmail" class="form-control" placeholder="örnek@mail.com" />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="forgotButton">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

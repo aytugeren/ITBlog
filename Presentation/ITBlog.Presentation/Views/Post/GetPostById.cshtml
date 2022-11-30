@@ -164,8 +164,6 @@
 
                                             <p>@Html.Raw(comment.CommentResult)</p>
 
-                                            <a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
-
                                         </div>
 
                                         <div class="clear"></div>
@@ -190,23 +188,6 @@
 
                         <form class="row" action="/Comment/AddComment" method="post" id="commentform">
                             <input type="text" name="PostId" id="PostId" style="display:none" value="@Model.Post.Id" />
-                            <div class="col-md-4 form-group">
-                                <label for="author">Ad</label>
-                                <input type="text" name="FirstName" id="author" value="" size="22" tabindex="1" class="sm-form-control" />
-                            </div>
-
-                            <div class="col-md-4 form-group">
-                                <label for="author">Soyad</label>
-                                <input type="text" name="SecondName" id="secondName" value="" size="22" tabindex="1" class="sm-form-control" />
-                            </div>
-
-                            <div class="col-md-4 form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="Email" id="email" value="" size="22" tabindex="2" class="sm-form-control" required/>
-                            </div>
-
-                            <div class="w-100"></div>
-
                             <div class="col-12 form-group">
                                 <label for="comment">Yorum</label>
                                 <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control" required></textarea>
