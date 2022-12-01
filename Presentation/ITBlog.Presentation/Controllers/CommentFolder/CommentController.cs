@@ -34,7 +34,6 @@ namespace ITBlog.Presentation.Controllers.CommentFolder
                 if (user == null)
                 {
                     return RedirectToAction("SignUp", "User");
-                    //return RedirectToAction("GetPostById", "Post", new { id = model.PostId });
                 }
                 else
                 {

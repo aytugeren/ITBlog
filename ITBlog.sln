@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A7BE9C0F-01CB-482B-9F32-854A534EBC8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITBlog.Presentation", "Presentation\ITBlog.Presentation\ITBlog.Presentation.csproj", "{CE8A547B-2A73-4062-B867-8A5EABDA6600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITBlog.Presentation", "Presentation\ITBlog.Presentation\ITBlog.Presentation.csproj", "{CE8A547B-2A73-4062-B867-8A5EABDA6600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITBlog.Admin", "Presentation\ITBlog.Admin\ITBlog.Admin.csproj", "{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{CE8A547B-2A73-4062-B867-8A5EABDA6600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE8A547B-2A73-4062-B867-8A5EABDA6600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE8A547B-2A73-4062-B867-8A5EABDA6600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{73F0C06A-E660-479B-8564-19971C03A5B3} = {92575DCB-0523-48B8-9F36-27DBF5C1ACE6}
 		{E3ED3997-7383-42E2-BF92-A22708D74911} = {92575DCB-0523-48B8-9F36-27DBF5C1ACE6}
 		{CE8A547B-2A73-4062-B867-8A5EABDA6600} = {A7BE9C0F-01CB-482B-9F32-854A534EBC8D}
+		{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819} = {A7BE9C0F-01CB-482B-9F32-854A534EBC8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {687DEF52-4709-4563-A44C-D27644911E45}
