@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ITBlog.Business.AuthorServiceFolder;
 using ITBlog.Business.DTO;
 using ITBlog.Business.DTO.ViewDTOs;
 using ITBlog.DataAccess.RepositoryFolder;
@@ -6,25 +7,23 @@ using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PostCategoryFolder;
 using ITBlog.Entities.Concrete.PostFolder;
 using ITBlog.Entities.Concrete.PostPlaceFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ITBlog.Business.PostServiceFolder
 {
     public class PostService : IPostService
     {
         private readonly IRepository<Post> _postRepository;
+        private readonly IAuthorService _authorService;
         private readonly IRepository<PostPlace> _postPlaceRepository;
         private readonly IRepository<Picture> _pictureRepository;
         private readonly IRepository<PostCategory> _postCategoryRepository;
         private readonly IMapper _mapper;
 
-        public PostService(IRepository<Post> postRepository, IRepository<PostPlace> postPlaceRepository, IRepository<Picture> pictureRepository, IMapper mapper)
+        public PostService(IRepository<Post> postRepository, IAuthorService authorService, IRepository<PostPlace> postPlaceRepository, IRepository<Picture> pictureRepository, IMapper mapper)
         {
             _postRepository = postRepository;
+            _authorService = authorService;
             _postPlaceRepository = postPlaceRepository;
             _pictureRepository = pictureRepository;
             _mapper = mapper;
@@ -40,8 +39,8 @@ namespace ITBlog.Business.PostServiceFolder
                 var posts = _postPlaceRepository.Query(x => x.PlaceId == placeId, "Post|Post.Pictures.Picture|Post.Categories.Category");
 
                 var result = _mapper.Map<List<PostDTO>>(posts.Select(x => x.Post));
-                
-                foreach(var post in result)
+
+                foreach (var post in result)
                 {
                     var model = new IndexViewDTOS();
 
@@ -158,6 +157,33 @@ namespace ITBlog.Business.PostServiceFolder
             var posts = _postRepository.Query(x => x.SecondContent.Contains(searchText) || x.FirstContent.Contains(searchText), "Author|Comments");
 
             return _mapper.Map<List<PostDTO>>(posts);
+        }
+
+        //Api
+
+        public List<PostListModel> GetAllPost()
+        {
+            var posts = _postRepository.GetAll().Where(x => x.IsActive && !x.IsDeleted).ToList();
+            var listModel = new List<PostListModel>();
+            if (posts != null)
+            {
+                var model = new PostListModel();
+                foreach (var post in posts)
+                {
+                    var author = _authorService.GetAuthorById(post.AuthorId);
+
+                    model.Id = post.Id;
+                    model.AuthorName = author.AuthorName;
+                    model.Title = post.Title;
+                    model.ShortText = post.SecondContent;
+                    model.PublishDate = post.CreatedDateTime;
+                    model.IsActive = post.IsActive;
+
+                    listModel.Add(model);
+                }
+            }
+            return listModel;
+
         }
     }
 }
