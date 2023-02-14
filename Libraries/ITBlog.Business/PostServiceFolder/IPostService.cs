@@ -19,5 +19,9 @@ namespace ITBlog.Business.PostServiceFolder
         List<PostDTO> GetPostsByDeterminedDayBefore(int dayBefore);
 
         List<PostDTO> GetPostsBySearchText(string searchText);
+
+        //Api
+        List<PostListModel> GetAllPost();
+
     }
 }

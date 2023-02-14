@@ -26,7 +26,7 @@ namespace ITBlog.DataAccess.ContextFolder
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-TI3NI16\SQLEXPRESS;Database=ITBlog;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=192.168.18.12;Database=ITBlog;User Id=sa;Password=DB258974!;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

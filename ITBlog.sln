@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITBlog.Presentation", "Presentation\ITBlog.Presentation\ITBlog.Presentation.csproj", "{CE8A547B-2A73-4062-B867-8A5EABDA6600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITBlog.Admin", "Presentation\ITBlog.Admin\ITBlog.Admin.csproj", "{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITBlog.Admin", "Presentation\ITBlog.Admin\ITBlog.Admin.csproj", "{B2394C85-CC59-4AE3-BC95-C9CFD8FE8819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
