@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {}
+    "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {
+    "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj",
         "projectName": "ITBlog.Entities",
-        "projectPath": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj",
+        "projectPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj",
         "packagesPath": "C:\\Users\\nrzkn\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\obj\\",
         "projectStyle": "PackageReference",

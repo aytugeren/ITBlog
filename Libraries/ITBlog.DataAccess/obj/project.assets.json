@@ -2474,9 +2474,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj",
       "projectName": "ITBlog.DataAccess",
-      "projectPath": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj",
+      "projectPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj",
       "packagesPath": "C:\\Users\\nrzkn\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
@@ -2495,8 +2495,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {
-              "projectPath": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj"
+            "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {
+              "projectPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj"
             }
           }
         }

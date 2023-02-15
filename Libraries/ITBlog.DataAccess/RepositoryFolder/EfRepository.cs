@@ -184,14 +184,13 @@ namespace ITBlog.DataAccess.RepositoryFolder
             {
                 if (includedProperties.Contains('|'))
                 {
-                    var resultEntities = this.Entities;
                     var splittedInclude = includedProperties.Split('|');
                     foreach (var item in splittedInclude)
                     {
-                        resultEntities.Include(item);
+                        this.Entities.Include(item).ToList();
                     }
 
-                    return resultEntities.ToList();
+                    return this.Entities.ToList();
                 }
 
                 if (this.Entities.Any())

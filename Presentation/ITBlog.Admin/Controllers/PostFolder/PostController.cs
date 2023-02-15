@@ -5,6 +5,7 @@
     using ITBlog.Business.DTO;
     using ITBlog.Business.DTO.ViewDTOs;
     using ITBlog.Business.PostServiceFolder;
+    using ITBlog.Entities.Concrete.PostFolder;
     using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
     #endregion
@@ -14,29 +15,36 @@
     public class PostController : ControllerBase
     {
         private readonly IPostService _postService;
-        private readonly IAuthorService _authorService;
 
-
-        public PostController(IPostService postService, IAuthorService authorService)
+        public PostController(IPostService postService)
         {
             _postService = postService;
-            _authorService = authorService;
         }
 
         [EnableCors("ITBlog")]
         [HttpGet("GetAllPosts")]
-        public List<PostListModel> GetPosts()
+        public List<PostListViewDTO> GetPosts()
         {
             var posts = _postService.GetAllPost();
             return posts;
         }
 
         [EnableCors("ITBlog")]
-        [HttpGet("GetPostById/post")]
-        public PostDTO GetPost(Guid id)
+        [HttpGet("GetPostWithId/post")]
+        public PostDetailViewDTO GetPost(Guid id)
         {
-            var post = _postService.GetPostById(id);
+            var post = _postService.GetPostWithId(id);
             return post;
+        }
+
+        [EnableCors("ITBlog")]
+        [HttpPost("CreateNewPost")]
+        public PostDTO AddNewPost(AddNewPostDTO model)
+        {
+
+            var post = _postService.AddNewPost(model);
+            return post;
+
         }
 
     }

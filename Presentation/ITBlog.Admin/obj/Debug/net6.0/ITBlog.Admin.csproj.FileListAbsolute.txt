@@ -25,6 +25,14 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Admin\obj\
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.genruntimeconfig.cache
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ref\ITBlog.Admin.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.csproj.AssemblyReference.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.AssemblyInfoInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.AssemblyInfo.cs
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.csproj.CoreCompileInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.RazorAssemblyInfo.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.RazorAssemblyInfo.cs
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug\net6.0\appsettings.json
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug\net6.0\ITBlog.Admin.exe
@@ -290,15 +298,6 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug\net6.0\ITBlog.Business.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug\net6.0\ITBlog.DataAccess.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\bin\Debug\net6.0\ITBlog.Entities.pdb
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.csproj.AssemblyReference.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.AssemblyInfoInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.AssemblyInfo.cs
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.csproj.CoreCompileInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.RazorAssemblyInfo.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\ITBlog.Admin.RazorAssemblyInfo.cs
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\staticwebassets\msbuild.ITBlog.Admin.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\staticwebassets\msbuild.build.ITBlog.Admin.props
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Admin\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ITBlog.Admin.props

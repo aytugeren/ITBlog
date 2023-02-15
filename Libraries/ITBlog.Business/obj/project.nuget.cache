@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nkWJXGOl+LONGxIQVBoTc2zTyyLOKnDUlP2qe01rFqnFuruPRf6H6iHzfEwF5vskdFeNV9Gd5bFHFi4wzzl6Ww==",
+  "dgSpecHash": "hR+6EKKbjO0A3FpxS3zMe484efnnIG7defLMdwjKHKKCvMwmJOso3in7TxWbcaSYV4nOTV9c2pZGEN/944VYdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
+  "projectFilePath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nrzkn\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\nrzkn\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

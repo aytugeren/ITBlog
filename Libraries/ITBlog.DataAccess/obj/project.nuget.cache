@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9gT1t+FS/hpVjNXOUz4lJqIx5T3Ub1qc1Q26JraBB9Wcyc8wqGENEsfbqjdJ3KK0Rv/Q8F7O2OoAQ6PNqdEMwQ==",
+  "dgSpecHash": "bmKZXyRM4C8SjWq6xRwyMjO2HqVe93mw9eJmV60LKUtay8spmVPwEXDy1ykBKPjSV8Iqk8h+3qMgQiNy664Nbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nrzkn\\source\\repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nrzkn\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\nrzkn\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

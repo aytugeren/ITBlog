@@ -82,6 +82,14 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentati
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.genruntimeconfig.cache
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ref\ITBlog.Presentation.dll
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutNone.cshtml.rz.scp.css
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.AssemblyReference.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfoInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfo.cs
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cs
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\appsettings.json
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.Presentation.staticwebassets.runtime.json
@@ -143,14 +151,6 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bi
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.Business.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.DataAccess.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.Entities.pdb
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.AssemblyReference.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfoInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfo.cs
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.CoreCompileInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cs
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\staticwebassets\msbuild.ITBlog.Presentation.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\staticwebassets\msbuild.build.ITBlog.Presentation.props
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ITBlog.Presentation.props

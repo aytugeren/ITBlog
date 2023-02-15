@@ -21,7 +21,11 @@ namespace ITBlog.Business.PostServiceFolder
         List<PostDTO> GetPostsBySearchText(string searchText);
 
         //Api
-        List<PostListModel> GetAllPost();
+        List<PostListViewDTO> GetAllPost();
+
+        PostDetailViewDTO GetPostWithId(Guid id);
+
+        PostDTO AddNewPost(AddNewPostDTO model);
 
     }
 }

@@ -28,4 +28,6 @@ namespace ITBlog.Business.DTO.ViewDTOs
 
         public AuthorDTO Author { get; set; }
     }
+
+   
 }

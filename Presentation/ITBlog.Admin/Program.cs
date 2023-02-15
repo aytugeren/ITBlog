@@ -4,6 +4,7 @@ using ITBlog.Business.AutoMapperFolder;
 using ITBlog.Business.PostServiceFolder;
 using ITBlog.DataAccess.ContextFolder;
 using ITBlog.DataAccess.RepositoryFolder;
+using System.Text.Json.Serialization;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -25,6 +26,9 @@ builder.Services.AddTransient<IPostService, PostService>();
 builder.Services.AddTransient<IAuthorService, AuthorService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 builder.Services.AddCors(options =>
 {
     // this defines a CORS policy called "default"
