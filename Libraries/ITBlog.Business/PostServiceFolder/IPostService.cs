@@ -1,5 +1,6 @@
 ﻿using ITBlog.Business.DTO;
 using ITBlog.Business.DTO.ViewDTOs;
+using ITBlog.Entities.Concrete.PostFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,16 @@ namespace ITBlog.Business.PostServiceFolder
         List<PostDTO> GetPostsBySearchText(string searchText);
 
         //Api
-        List<PostListModel> GetAllPost();
+        List<PostListViewDTO> GetAllPost();
+
+        PostDetailViewDTO GetPostWithId(Guid id);
+
+        PostDTO AddNewPost(AddNewPostDTO model);
+
+        PostUpdateViewDTO UpdatePostWithId(Guid id, PostUpdateViewDTO model);
+
+        Post DeletePostWithId(Guid id);
+
 
     }
 }

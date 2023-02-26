@@ -1,0 +1,125 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ITBlog.Presentation
+build_property.RootNamespace = ITBlog.Presentation
+build_property.ProjectDir = C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Category/GetCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcR2V0Q2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Category/GetNavigationCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcR2V0TmF2aWdhdGlvbkNhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/AboutMe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dE1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/GetCVPicture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRDVlBpY3R1cmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/GetHomeRightSiderBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRIb21lUmlnaHRTaWRlckJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/GetSocialMedias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRTb2NpYWxNZWRpYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/GetSubsBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRTdWJzQm94LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Post/GetPostById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxHZXRQb3N0QnlJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Post/GetPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxHZXRQb3N0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Post/GetSideBarRecentPost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxHZXRTaWRlQmFyUmVjZW50UG9zdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Post/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Slider/GetSliders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXEdldFNsaWRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/User/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/User/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ogqt0c1cgx
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_LayoutAboutMe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBYm91dE1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ka6cbj8cdj
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-ydof1ikotn
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_LayoutNone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXROb25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-vql4nqitv3
+
+[C:/Users/nrzkn/Source/Repos/aytugeren/ITBlog/Presentation/ITBlog.Presentation/Views/Shared/_LayoutPostDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQb3N0RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ob180qx1i8

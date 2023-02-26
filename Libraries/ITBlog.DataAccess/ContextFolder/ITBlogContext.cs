@@ -13,11 +13,13 @@ using ITBlog.Entities.Concrete.PostPlaceFolder;
 using ITBlog.Entities.Concrete.SocialMediaFolder;
 using ITBlog.Entities.Concrete.SubscriberFolder;
 using ITBlog.Entities.Concrete.UserFolder;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITBlog.DataAccess.ContextFolder
 {
-    public class ITBlogContext : DbContext
+    public class ITBlogContext : IdentityDbContext<IdentityUser>
     {
         public ITBlogContext()
         {
@@ -26,11 +28,13 @@ namespace ITBlog.DataAccess.ContextFolder
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=192.168.18.12;Database=ITBlog;User Id=sa;Password=DB258974!;");
+            optionsBuilder.UseSqlServer(@"Server=192.168.18.12;Database=ITBlog;User Id=sa;Password=DB258974!; Encrypt=False;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.ApplyConfiguration(new PostMapping());
             modelBuilder.ApplyConfiguration(new CategoryMapping());
             modelBuilder.ApplyConfiguration(new AuthorMapping());

@@ -65,5 +65,6 @@ namespace ITBlog.DataAccess.RepositoryFolder
         /// <param name="includedProperties"></param>
         /// <returns></returns>
         List<T> Query(Expression<Func<T, bool>> predicate, string includedProperties);
+
     }
 }

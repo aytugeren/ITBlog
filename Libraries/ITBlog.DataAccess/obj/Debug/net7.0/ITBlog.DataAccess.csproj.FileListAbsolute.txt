@@ -1,0 +1,17 @@
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net7.0\ITBlog.DataAccess.deps.json
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net7.0\ITBlog.DataAccess.runtimeconfig.json
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net7.0\ITBlog.DataAccess.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net7.0\ITBlog.DataAccess.pdb
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net7.0\ITBlog.Entities.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\bin\Debug\net7.0\ITBlog.Entities.pdb
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.csproj.AssemblyReference.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.AssemblyInfoInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.AssemblyInfo.cs
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.csproj.CopyComplete
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\refint\ITBlog.DataAccess.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.pdb
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ITBlog.DataAccess.genruntimeconfig.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.DataAccess\obj\Debug\net7.0\ref\ITBlog.DataAccess.dll
