@@ -12,3 +12,17 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.genruntimeconfig.cache
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ref\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.deps.json
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.runtimeconfig.json
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.pdb
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.csproj.AssemblyReference.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.AssemblyInfoInputs.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.AssemblyInfo.cs
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\refint\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.pdb
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.genruntimeconfig.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ref\ITBlog.Entities.dll

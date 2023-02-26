@@ -17,3 +17,22 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.genruntimeconfig.cache
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ref\ITBlog.Business.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.Business.deps.json
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.Business.runtimeconfig.json
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.Business.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.Business.pdb
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.DataAccess.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.Entities.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.DataAccess.pdb
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\bin\Debug\net7.0\ITBlog.Entities.pdb
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.csproj.AssemblyReference.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.AssemblyInfoInputs.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.AssemblyInfo.cs
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.csproj.CopyComplete
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\refint\ITBlog.Business.dll
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.pdb
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ITBlog.Business.genruntimeconfig.cache
+D:\VisualStudio\Projects\ASP.NET Core-ITBlog\Libraries\ITBlog.Business\obj\Debug\net7.0\ref\ITBlog.Business.dll

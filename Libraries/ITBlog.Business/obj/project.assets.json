@@ -6591,19 +6591,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nrzkn\\.nuget\\packages\\": {}
+    "C:\\Users\\aytug\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
+      "projectUniqueName": "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
       "projectName": "ITBlog.Business",
-      "projectPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
-      "packagesPath": "C:\\Users\\nrzkn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Business\\obj\\",
+      "projectPath": "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.Business\\ITBlog.Business.csproj",
+      "packagesPath": "C:\\Users\\aytug\\.nuget\\packages\\",
+      "outputPath": "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nrzkn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aytug\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6617,11 +6617,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj"
+            "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj": {
+              "projectPath": "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.DataAccess\\ITBlog.DataAccess.csproj"
             },
-            "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {
-              "projectPath": "C:\\Users\\nrzkn\\Source\\Repos\\aytugeren\\ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj"
+            "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj": {
+              "projectPath": "D:\\VisualStudio\\Projects\\ASP.NET Core-ITBlog\\Libraries\\ITBlog.Entities\\ITBlog.Entities.csproj"
             }
           }
         }
@@ -6661,7 +6661,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
