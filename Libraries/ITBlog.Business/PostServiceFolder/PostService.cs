@@ -4,6 +4,7 @@ using ITBlog.Business.DTO;
 using ITBlog.Business.DTO.MappingDTOs;
 using ITBlog.Business.DTO.ViewDTOs;
 using ITBlog.DataAccess.RepositoryFolder;
+using ITBlog.Entities.Concrete;
 using ITBlog.Entities.Concrete.PictureFolder;
 using ITBlog.Entities.Concrete.PostCategoryFolder;
 using ITBlog.Entities.Concrete.PostFolder;
@@ -18,13 +19,15 @@ namespace ITBlog.Business.PostServiceFolder
         private readonly IRepository<Post> _postRepository;
         private readonly IRepository<PostPlace> _postPlaceRepository;
         private readonly IRepository<PostCategory> _postCategoryRepository;
+        private readonly IRepository<Category> _categoryRepository;
         private readonly IMapper _mapper;
 
-        public PostService(IRepository<Post> postRepository, IRepository<PostPlace> postPlaceRepository, IRepository<PostCategory> postCategoryRepository, IMapper mapper)
+        public PostService(IRepository<Post> postRepository, IRepository<PostPlace> postPlaceRepository, IRepository<PostCategory> postCategoryRepository, IRepository<Category> categoryRepository, IMapper mapper)
         {
             _postRepository = postRepository;
             _postPlaceRepository = postPlaceRepository;
             _postCategoryRepository = postCategoryRepository;
+            _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
 
@@ -189,8 +192,14 @@ namespace ITBlog.Business.PostServiceFolder
                     Content = d.SecondContent,
                     AuthorName = d.Author.AuthorName,
                     PictureList = d.Pictures.Where(x => x.PostId == id).Select(y => y.Picture.PictureUrl).ToList(),
-                    CategoryList = d.Categories.Where(x => x.PostId == id).Select(y => y.Category.CategoryName).ToList(),
                     CommentList = d.Comments.Where(x => x.PostId == id).Select(y => y.CommentResult).ToList(),
+                    PostCategories = d.Categories.Where(x => x.PostId == id).Select(y => new PostCategoryViewDTO
+                    {
+                        CategoryId = y.Id,
+                        CategoryName = y.Category.CategoryName,
+
+                    }).ToList(),
+
                 }
                 ).FirstOrDefault();
             return post;
@@ -200,39 +209,105 @@ namespace ITBlog.Business.PostServiceFolder
         public PostDTO AddNewPost(AddNewPostDTO model)
         {
             var userGuid = new Guid("96BC1CDB-4135-481E-B628-6B41021B0C55");
-            PostDTO post = new PostDTO();
-            if (model != null)
+            var uncatGuid = new Guid("1E863F4F-9388-40EC-A10D-816DAAC40C0A");
+            var newPostId = Guid.NewGuid();
+            var newColId = Guid.NewGuid();
+            List<PostCategoryDTO> categories = new();
+            PostDTO post = new();
+            try
             {
-                post.Id = model.Id;
-                post.Title = model.Title;
-                post.FirstContent = model.Content;
-                post.SecondContent = model.ShortText;
-                post.AuthorId = userGuid;
-
-                try
+                if (model != null)
                 {
-                    _postRepository.Insert(_mapper.Map<Post>(post));
-                    //insert metodunda onay dönüşü alınacak ??
-                    if (model.CategoryList != null)
+                    post.Id = newPostId;
+                    post.Title = model.Title;
+                    post.FirstContent = model.ShortText;
+                    post.SecondContent = model.Content;
+                    post.AuthorId = userGuid;
+
+                    if (model.CategoryList.Count > 0)
                     {
-                        var categoryList = model.CategoryList;
-                        var category = new PostCategoryDTO();
-                        foreach (var item in categoryList)
+                        post.Categories = model.CategoryList.Select(d => new PostCategoryDTO
                         {
-                            category.PostId = model.Id;
-                            category.CategoryId = item;
-
-                            _postCategoryRepository.Insert(_mapper.Map<PostCategory>(category));
-                        }
+                            Id = newColId,
+                            PostId = newPostId,
+                            CategoryId = d
+                        }).ToList();
                     }
-                    return post;
+                    else
+                    {
+                        post.Categories = categories.Select(d => new PostCategoryDTO
+                        {
+                            Id = newColId,
+                            PostId = newPostId,
+                            CategoryId = uncatGuid,
+                        }).ToList();
+                    }
+
+                    _postRepository.Insert(_mapper.Map<Post>(post));
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
             return post;
         }
+
+        public PostUpdateViewDTO UpdatePostWithId(Guid id, PostUpdateViewDTO model)
+        {
+            var uncatGuid = new Guid("1E863F4F-9388-40EC-A10D-816DAAC40C0A");
+            var newColId = Guid.NewGuid();
+            List<PostCategoryDTO> categories = new();
+            var post = _postRepository.Query(d => d.Id == id, "Author|Categories|Categories.Category|Pictures|Pictures.Picture|Comments")
+               .FirstOrDefault();
+            try
+            {
+                if (post != null)
+                {
+                    post.Title = model.Title;
+                    post.FirstContent = model.ShortText;
+                    post.SecondContent = model.Content;
+                    post.UpdatedDateTime = DateTime.Now;
+                    if (model.CategoryList.Count > 0)
+                    {
+                        post.Categories = model.CategoryList.Select(d => new PostCategory
+                        {
+                            Id = newColId,
+                            PostId = post.Id,
+                            CategoryId = d
+                        }).ToList();
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                    _postRepository.Update(_mapper.Map<Post>(post));
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return model;
+
+        }
+
+        public Post DeletePostWithId(Guid id)
+        {
+            var post = _postRepository.GetById(id);
+            if (post != null)
+            {
+                _postRepository.Delete(_mapper.Map<Post>(post));
+                return post;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
     }
 }

@@ -17,22 +17,3 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.pdb
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.genruntimeconfig.cache
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ref\ITBlog.Business.dll
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.csproj.AssemblyReference.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.AssemblyInfoInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.AssemblyInfo.cs
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.csproj.CoreCompileInputs.cache
-C:\Users\nrzkn\source\repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Business.deps.json
-C:\Users\nrzkn\source\repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Business.runtimeconfig.json
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Business.dll
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Business.pdb
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.DataAccess.dll
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Entities.dll
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.DataAccess.pdb
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\bin\Debug\net6.0\ITBlog.Entities.pdb
-C:\Users\nrzkn\source\repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.csproj.CopyComplete
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.dll
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\refint\ITBlog.Business.dll
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.pdb
-C:\Users\nrzkn\source\repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ITBlog.Business.genruntimeconfig.cache
-C:\Users\nrzkn\source\repos\aytugeren\ITBlog\Libraries\ITBlog.Business\obj\Debug\net6.0\ref\ITBlog.Business.dll

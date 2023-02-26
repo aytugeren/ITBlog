@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ITBlog.Business.DTO;
+using ITBlog.Business.DTO.ViewDTOs.Category;
 using ITBlog.Business.Enums;
 using ITBlog.DataAccess.RepositoryFolder;
 using ITBlog.Entities.Concrete;
@@ -57,11 +58,55 @@ namespace ITBlog.Business.CategoryServiceFolder
                         }
                     }
                 }
-
                 return listOfCategories;
             }
-
             return listOfCategories;
         }
+
+        //Api
+
+        public List<CategoryListViewDTO> GetAllCategories()
+        {
+            var categories = _categoryRepository.GetAll();
+            var categoryList = categories.Where(d => d.ParentCategoryId == null).Select(c => new CategoryListViewDTO
+            {
+                Id = c.Id,
+                CategoryName = c.CategoryName,
+                SubCategories = categories.Where(f => f.ParentCategoryId == c.Id).Select(x => new SubCategoryViewDTO
+                {
+                    Id = x.Id,
+                    CategoryName = x.CategoryName
+                }).ToList(),
+            }).ToList();
+            return categoryList;
+        }
+
+        public NewCategoryViewDTO AddNewCategory(NewCategoryViewDTO model)
+        {
+
+            CategoryDTO category = new();
+
+            try
+            {
+                if (model != null)
+                {
+                    category.ParentCategoryId = model.ParentId;
+                    category.CategoryName = model.CategoryName;
+                    category.CategoryUrl = model.CategoryUrl;
+                    category.IsCategoryMain = model.IsCategoryMain;
+                    category.CategorySeoName = model.CategorySeoName;
+
+                    _categoryRepository.Insert(_mapper.Map<Category>(category));
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return model;
+
+        }
+
     }
 }

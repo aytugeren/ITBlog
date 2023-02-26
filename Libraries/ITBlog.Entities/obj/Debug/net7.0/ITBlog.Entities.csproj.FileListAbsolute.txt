@@ -1,0 +1,14 @@
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.deps.json
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.runtimeconfig.json
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\bin\Debug\net7.0\ITBlog.Entities.pdb
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.csproj.AssemblyReference.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.AssemblyInfoInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.AssemblyInfo.cs
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.csproj.CoreCompileInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\refint\ITBlog.Entities.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.pdb
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ITBlog.Entities.genruntimeconfig.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Libraries\ITBlog.Entities\obj\Debug\net7.0\ref\ITBlog.Entities.dll

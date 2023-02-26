@@ -9,6 +9,6 @@ namespace ITBlog.Business.DTO.ViewDTOs
     public class ApiResultModel
     {
         public int Result { get; set; }
-        public string Error { get; set; }
+        public string? Error { get; set; }
     }
 }

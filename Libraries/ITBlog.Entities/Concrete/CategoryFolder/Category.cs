@@ -1,8 +1,6 @@
 ﻿using ITBlog.Entities.Concrete.CategoryPlaceFolder;
 using ITBlog.Entities.Concrete.EntityFolder;
-using ITBlog.Entities.Concrete.PlaceFolder;
 using ITBlog.Entities.Concrete.PostCategoryFolder;
-using ITBlog.Entities.Concrete.PostFolder;
 
 namespace ITBlog.Entities.Concrete
 {

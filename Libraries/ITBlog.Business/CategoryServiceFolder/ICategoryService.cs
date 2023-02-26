@@ -1,4 +1,5 @@
 ﻿using ITBlog.Business.DTO;
+using ITBlog.Business.DTO.ViewDTOs.Category;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,9 @@ namespace ITBlog.Business.CategoryServiceFolder
         Dictionary<CategoryDTO, List<CategoryDTO>> GetCategoryByPlaceName(string placeName);
 
         CategoryDTO GetCategoryById(Guid id);
+
+        List<CategoryListViewDTO> GetAllCategories();
+
+        NewCategoryViewDTO AddNewCategory(NewCategoryViewDTO model);
     }
 }

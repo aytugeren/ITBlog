@@ -82,14 +82,6 @@ D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentati
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.genruntimeconfig.cache
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ref\ITBlog.Presentation.dll
 D:\VisualStudio\Projects\ASP.NET Core-Blog\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutNone.cshtml.rz.scp.css
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.AssemblyReference.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfoInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfo.cs
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.CoreCompileInputs.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cache
-C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cs
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\appsettings.json
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.Presentation.staticwebassets.runtime.json
@@ -104,12 +96,14 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bi
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -151,6 +145,14 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bi
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.Business.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.DataAccess.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\ITBlog.Entities.pdb
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.AssemblyReference.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfoInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.AssemblyInfo.cs
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cache
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.RazorAssemblyInfo.cs
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\staticwebassets\msbuild.ITBlog.Presentation.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\staticwebassets\msbuild.build.ITBlog.Presentation.props
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ITBlog.Presentation.props
@@ -171,3 +173,8 @@ C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\ob
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.pdb
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ITBlog.Presentation.genruntimeconfig.cache
 C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\obj\Debug\net6.0\ref\ITBlog.Presentation.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\nrzkn\Source\Repos\aytugeren\ITBlog\Presentation\ITBlog.Presentation\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
