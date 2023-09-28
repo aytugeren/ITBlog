@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ITBlog.DataAccess\ITBlog.DataAccess.csproj" />
     <ProjectReference Include="..\ITBlog.Entities\ITBlog.Entities.csproj" />
+    <ProjectReference Include="..\ITBlog.Extension\ITBlog.Extension.csproj" />
   </ItemGroup>
 
 </Project>

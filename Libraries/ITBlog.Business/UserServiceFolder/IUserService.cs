@@ -13,8 +13,10 @@ namespace ITBlog.Business.UserServiceFolder
 
         UserDTO GetUserByUserName(string userName);
 
-        bool CheckUser(UserDTO userDTO);
+        bool CheckUser(UserDTO userDTO, string saltPassword);
 
-        bool InserToUser(UserDTO model);
+        bool InserToUser(UserDTO model, string saltPassword);
+
+        string SendRememberMail(UserDTO user, string saltPassword);
     }
 }

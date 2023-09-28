@@ -10,10 +10,12 @@ namespace ITBlog.Presentation.Controllers.UserFolder
     public class UserController : Controller
     {
         private readonly IUserService _userService;
+        IConfiguration _configuration;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IConfiguration configuration)
         {
             _userService = userService;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -36,7 +38,7 @@ namespace ITBlog.Presentation.Controllers.UserFolder
                     dtoModel.UserName = model.Username;
                 }
                 dtoModel.Password = model.Password;
-                if (_userService.CheckUser(dtoModel))
+                if (_userService.CheckUser(dtoModel, _configuration["Authentication:SaltPassword"]))
                 {
                     var claims = new List<Claim>
                     {
@@ -112,7 +114,7 @@ namespace ITBlog.Presentation.Controllers.UserFolder
                 dtoModel.Password = model.Password;
                 dtoModel.LastVisitedDate = DateTime.Now;
 
-                var result = _userService.InserToUser(dtoModel);
+                var result = _userService.InserToUser(dtoModel, _configuration["Authentication:SaltPassword"]);
 
                 return new JsonResult(result);
             }
