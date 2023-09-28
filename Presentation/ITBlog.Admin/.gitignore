@@ -1,0 +1,113 @@
+# Temel .NET Core ve Visual Studio özel dosyaları
+.vscode/
+bin/
+obj/
+Debug/
+Release/
+
+# .NET proje dosyaları
+*.suo
+*.user
+*.sln.docstates
+
+# Veritabanı dosyaları
+*.mdf
+*.ldf
+
+# Visual Studio'dan oluşturulan dosyalar
+.vscode/
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Paketleme dosyaları
+*.nupkg
+*.pfx
+
+# .NET önbelleği ve derleme sonuçları
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio'nun kişisel ayarları
+.vscode/
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Test geçmişi
+TestResults/
+
+# Resharper dosyaları
+_ReSharper*/
+
+# Rider dosyaları
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directory
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directory
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
