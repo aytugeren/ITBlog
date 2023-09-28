@@ -10,7 +10,8 @@
         "dependencies": {
           "AutoMapper": "12.0.0",
           "ITBlog.DataAccess": "1.0.0",
-          "ITBlog.Entities": "1.0.0"
+          "ITBlog.Entities": "1.0.0",
+          "ITBlog.Extension": "1.0.0"
         },
         "runtime": {
           "ITBlog.Business.dll": {}
@@ -573,6 +574,11 @@
         "runtime": {
           "ITBlog.Entities.dll": {}
         }
+      },
+      "ITBlog.Extension/1.0.0": {
+        "runtime": {
+          "ITBlog.Extension.dll": {}
+        }
       }
     }
   },
@@ -931,6 +937,11 @@
       "sha512": ""
     },
     "ITBlog.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ITBlog.Extension/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
