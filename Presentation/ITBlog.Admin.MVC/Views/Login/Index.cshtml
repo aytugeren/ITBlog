@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="unix-login">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="login-content">
+                    <div class="login-logo">
+                        <a href="index.html"><span>IT Blog</span></a>
+                    </div>
+                    <div class="login-form">
+                        <h4>Administratior Login</h4>
+                        <form action="/Login/Login" method="post">
+                            <div class="form-group">
+                                <label>E-Mail</label>
+                                <input type="email" class="form-control" name="Email" placeholder="E-mail adresini giriniz...">
+                            </div>
+                            <div class="form-group">
+                                <label>Parola</label>
+                                <input type="password" class="form-control" name="Password" placeholder="Parola Giriniz..">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember Me
+                                </label>
+                                <label class="pull-right">
+                                    <a href="#">Forgotten Password?</a>
+                                </label>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -27,6 +27,10 @@ namespace ITBlog.Business.DTO
 
         public string? AuthorRole { get; set; }
 
+        public string? Email { get; set; }
+
+        public string? Password { get; set; }
+
         public virtual ICollection<PostDTO> Posts { get; set; }
 
         public virtual ICollection<AuthorPictureDTO> Pictures { get; set; }

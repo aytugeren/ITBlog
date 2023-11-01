@@ -1,0 +1,87 @@
+﻿@using ITBlog.Business.DTO;
+@model List<PictureDTO>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@if (!string.IsNullOrEmpty(ViewData["SuccessMessageOfSubmit"]?.ToString()))
+{
+    <div class="alert alert-success">
+        @ViewData["SuccessMessageOfSubmit"]
+    </div>
+}
+<div class="card-body">
+    <a class="btn btn-success m-b-10 m-l-5" href="/Picture/GetPictureDetailById/@Guid.Empty.ToString()">Yeni Ekle</a>
+</div>
+<div class="row">
+
+
+    @if (Model != null)
+    {
+
+        @foreach (var picture in Model)
+        {
+            <div class="col-lg-4">
+                <div class="card overflow-scroll" width="100">
+                    <div class="card-title">
+                        <center><h4><b>@picture.PictureName</b></h4></center>
+                    </div>
+                    <div class="content">
+                        <div class="col-lg-12">
+                            <center>
+                                <img class="vw-100" src="@picture.PictureUrl" alt="@picture.PictureAltName" height="100" width="150" />
+                            </center>
+
+                        </div>
+                        <div class="col-lg-12">
+                            <center>
+                                <h4>Görsel Bilgileri</h4>
+                            </center>
+                            <p><h6>Görsel Başlık             : </h6> @picture.PictureTitle</p>
+                            <p><h6>Görsel Konumu             : </h6> @picture.PicturePlace</p>
+                            <p><h6>Görsel Url                : </h6> @picture.PictureUrl</p>
+                            <p><h6>Görsel Alt Name           : </h6> @picture.PictureAltName</p>
+                            <p><h6>Görsel Dosya Yolu         : </h6> @picture.PictureFilePath</p>
+                            <p><h6>Görsel Uzantı             : </h6> @picture.PictureExtension</p>
+                            <p><h6>Görsel İçerik             : </h6> @picture.PictureContent</p>
+                            <p>
+                                <h6>Görsel Varsayılan Mı?     : </h6>
+                                @if (picture.PictureIsDefault)
+                                {
+                                    <span>Evet</span>
+                                }
+                                else
+                                {
+                                    <span>Hayır</span>
+                                }
+                            </p>
+                            <p><h6>Görsel Oluşturulma Tarihi : </h6> @picture.CreatedDateTime.ToString("dd-MM-yyyy hh-mm")</p>
+                            <p>
+                                <h6>Görsel Aktif Mi?          : </h6>
+                                @if (picture.IsActive && !picture.IsDeleted)
+                                {
+                                    <span>Evet</span>
+
+                                }
+                                else
+                                {
+                                    <span>Hayır</span>
+                                }
+                            </p>
+                            <p>
+                                <a class="btn btn-dark btn-rounded m-b-10 m-l-5" href="/Picture/GetPictureDetailById/@picture.Id.ToString()"><i class="ti-pencil"></i></a>
+                                <a class="btn btn-danger btn-rounded m-b-10 m-l-5" href="/Picture/RemovePictureById/@picture.Id.ToString()"><i class="ti-close"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <span class="alert alert-warning">Görsel Bulunamadı Lütfen ekleyiniz!</span>
+    }
+</div>

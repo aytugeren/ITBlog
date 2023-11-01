@@ -1,0 +1,176 @@
+﻿@using ITBlog.Business.DTO;
+@model CategoryEditModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@if (Model.Category != null)
+{
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-title">
+                <h4>@Model.Category.CategoryName Kategorisi Editleme</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/Catalog/SubmitCategory" method="post">
+                        <div class="form-group hidden">
+                            <p class="text-muted m-b-15 f-s-12"><b>Kategori Id :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Kategori Adı" value="@Model.Category.Id" name="CategoryId">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12"><b>Kategori Adı :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Kategori Adı" value="@Model.Category.CategoryName" name="CategoryName">
+                        </div>
+                        <div class="form-group">
+                            <label>Üst Kategori : </label>
+                            <select class="form-control" name="ParentCategoryId">
+                                @if (Model.Category.ParentCategoryId == null)
+                                {
+                                    <option>Seçiniz..</option>
+                                }
+                                else if (Model.Category.ParentCategoryId != null)
+                                {
+                                    var parentCategoryId = Model.Category.ParentCategoryId;
+                                    var categoryName = Model.CategoryList.FirstOrDefault(x => x.Id == parentCategoryId)?.CategoryName;
+
+                                    <option value="@parentCategoryId">@categoryName</option>
+                                }
+
+                                @foreach (var category in Model.CategoryList.Where(x => x.Id != Model.Category?.ParentCategoryId))
+                                {
+                                    <option value="@category.Id">@category.CategoryName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Kategori Konumu :</label>
+                            <select class="form-control" id="categoryPlace" onchange="addCategoryPlace('@Model.Category.Id')">
+                                <option>Seçiniz...</option>
+                                @foreach (var item in Model.Places.Where(x => !Model.Category.Places.Select(y => y.PlaceId).Contains(x.Id)))
+                                {
+                                    if (Model.Places.Where(x => !Model.Category.Places.Select(y => y.PlaceId).Contains(x.Id)).Count() == 0)
+                                    {
+                                        <option disabled>Seçilecek Bir Konum Kalmadı!</option>
+                                    }
+
+                                    <option value="@item.Id">@item.PlaceName</option>
+                                }
+                            </select>
+
+                            <br>
+
+                            @foreach (var item in Model.Category.Places)
+                            {
+                                <button type="button" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><a href="/Catalog/RemoveCategoryPlace?placeId=@item.PlaceId&categoryId=@item.CategoryId"><i class="ti-close"></i></a>@item.Place.PlaceName</button>
+                            }
+                            <p>@ViewData["ErrorMessage"]</p>
+
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Kategori Seo Name :</p>
+                            <input type="text" class="form-control input-focus" placeholder="Kategori Seo Name" value="@Model.Category.CategorySeoName" name="CategorySeoName">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Kategori Base Url :</p>
+                            <input type="text" class="form-control input-focus" placeholder="Kategori Seo Name" value="@Model.Category.CategoryUrl" name="CategoryUrl">
+                        </div>
+                        <div class="form-group">
+                            <label>Aktiflik : </label>
+                            <select class="form-control" name="CategoryActiveStatus">
+                                @if (Model.Category.IsActive && !Model.Category.IsDeleted)
+                                {
+                                    <option value="true">Aktif</option>
+                                    <option value="false">Pasif</option>
+                                }
+                                else if (Model.Category.IsDeleted && !Model.Category.IsActive)
+                                {
+                                    <option value="false">Pasif</option>
+                                    <option value="true">Aktif</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success m-b-10 m-l-5">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-title">
+                <h4>Yeni Kategori Ekleme</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/Catalog/SubmitCategory" method="post">
+                        <div class="form-group hidden">
+                            <p class="text-muted m-b-15 f-s-12"><b>Kategori Id :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Kategori Adı" value="" name="CategoryId">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12"><b>Kategori Adı :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Kategori Adı" value="" name="CategoryName">
+                        </div>
+                        <div class="form-group">
+                            <label>Üst Kategori : </label>
+                            <select class="form-control" name="ParentCategoryId">
+                                <option>Seçiniz..</option>
+
+                                @foreach (var category in Model.CategoryList.Where(x => x.Id != Model.Category?.ParentCategoryId))
+                                {
+                                    <option value="@category.Id">@category.CategoryName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Kategori Konumu :</label>
+                            <span class="alert alert-warning">Önce kategoriyi oluşturun. Konumlandırmasını sonra yapmalısınız!</span>
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Kategori Seo Name :</p>
+                            <input type="text" class="form-control input-focus" placeholder="Kategori Seo Name" value="" name="CategorySeoName">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Kategori Base Url :</p>
+                            <input type="text" class="form-control input-focus" placeholder="Kategori Seo Name" value="" name="CategoryUrl">
+                        </div>
+                        <div class="form-group">
+                            <label>Aktiflik : </label>
+                            <select class="form-control" name="CategoryActiveStatus">
+                                <option value="true">Aktif</option>
+                                <option value="false">Pasif</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success m-b-10 m-l-5">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function addCategoryPlace(categoryId) {
+        var option = document.getElementById("categoryPlace").value;
+        var url = "/Catalog/AddCategoryPlace?categoryId=" + categoryId + "&categoryPlaceId=" + option; // Controller ve Action adınızı buraya ekleyin
+
+        fetch(url, {
+            method: "GET"
+        })
+            .then(response => {
+                location.reload();
+            })
+            .catch(error => {
+                // İstek hata ile sonuçlandığında burada işlem yapabilirsiniz.
+                console.error('Hata oluştu:', error);
+            });
+    }
+</script>

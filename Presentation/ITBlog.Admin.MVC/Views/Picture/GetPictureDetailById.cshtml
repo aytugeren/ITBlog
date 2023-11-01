@@ -1,0 +1,215 @@
+﻿@using ITBlog.Business.DTO;
+@model PictureDTO
+
+@{
+    bool.TryParse(ViewData["isError"]?.ToString() ?? "false", out bool isError);
+}
+
+@if (isError)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessageOfPictureSubmit"]
+    </div>
+}
+
+@if (Model != null)
+{
+    <form action="/Picture/SubmitPicture" method="post">
+        <div class="col-lg-12">
+            <div class="form-group hidden">
+                <label class="col-sm-2 control-label">Görsel Id :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.Id" name="PictureId">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel :</label>
+                <div class="col-sm-10">
+                    <img class="vw-100" src="@Model.PictureUrl" alt="@Model.PictureAltName" height="100" width="150" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Başlık :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureTitle" name="PictureTitle">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Adı :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureName" name="PictureName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Konumu :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PicturePlace" name="PicturePlace">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Url :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureUrl" name="PictureUrl">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Alt Name :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureAltName" name="PictureAltName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Dosya Yolu :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureFilePath" name="PictureFilePath">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Uzantı :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureExtension" name="PictureExtension">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel İçerik :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.PictureContent" name="PictureContent">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Varsayılan Mı :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="PıctureIsDefault">
+                        @if (Model.PictureIsDefault)
+                        {
+                            <option value="true">Evet</option>
+                            <option value="false">Hayır</option>
+                        }
+                        else
+                        {
+                            <option value="false">Hayır</option>
+                            <option value="true">Evet</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Aktif Mi :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="PictureIsActive">
+                        @if (Model.IsActive && !Model.IsDeleted)
+                        {
+                            <option value="true">Evet</option>
+                            <option value="false">Hayır</option>
+                        }
+                        else
+                        {
+                            <option value="false">Hayır</option>
+                            <option value="true">Evet</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group hidden">
+                <label class="col-sm-2 control-label">Görsel Oluşturulma Tarihi :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.CreatedDateTime" name="CreatedDateTime">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success m-b-10 m-l-5">Kaydet</button>
+        </div>
+    </form>
+
+}
+else
+{
+    <form action="/Picture/SubmitPicture" method="post">
+        <div class="col-lg-12">
+            <div class="form-group hidden">
+                <label class="col-sm-2 control-label">Görsel Id :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureId">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel :</label>
+                <div class="col-sm-10">
+                    <img class="vw-100" src="" alt="Görsel Yükleyiniz!" height="100" width="150" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Başlık :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureTitle">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Adı :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value=" name="PictureName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Konumu :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PicturePlace">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Url :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureUrl">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Alt Name :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureAltName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Dosya Yolu :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureFilePath">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Uzantı :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureExtension">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel İçerik :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="PictureContent">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Varsayılan Mı :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="PıctureIsDefault">
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Görsel Aktif Mi :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="PictureIsActive">
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group hidden">
+                <label class="col-sm-2 control-label">Görsel Oluşturulma Tarihi :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="" name="CreatedDateTime">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success m-b-10 m-l-5">Kaydet</button>
+        </div>
+    </form>
+}

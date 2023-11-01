@@ -12,5 +12,14 @@ namespace ITBlog.Business.PictureServiceFolder
         List<PictureDTO> GetPicturesByPlaceName(string placeName);
 
         PictureDTO GetCVByUserName(string userName);
+
+        List<PictureDTO> GetPicturesForAdmin();
+
+        PictureDTO GetPictureDetailById(Guid id);
+
+        bool RemovePicture(Guid id);
+
+        bool SubmitPicture(PictureDTO picture, bool isUpdate);
+
     }
 }

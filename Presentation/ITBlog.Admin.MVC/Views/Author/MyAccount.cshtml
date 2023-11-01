@@ -1,0 +1,54 @@
+﻿@using ITBlog.Business.DTO;
+@model AuthorDTO;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="float-right">
+    <div class="dropdown dib">
+        @if (Model == null)
+        {
+            <div class="header-icon">
+                <span class="user-avatar">
+                    Giriş Yap
+                    <i class="ti-arrow-circle-right"></i>
+                </span>
+            </div>
+        }
+        else{
+        <div class="header-icon" data-toggle="dropdown">
+            <span class="user-avatar">
+                @Model.AuthorName @Model.AuthorLastName
+                <i class="ti-angle-down f-s-10"></i>
+            </span>
+            <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                <div class="dropdown-content-body">
+                    <ul>
+                        <li>
+                            <a href="/Author/GetAuthorInfosById/@Model.Id.ToString()">
+                                <i class="ti-user"></i>
+                                <span>Profil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ti-settings"></i>
+                                <span>Ayarlar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="ti-power-off"></i>
+                                <span>Çıkış Yap</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        }
+        
+    </div>
+</div>

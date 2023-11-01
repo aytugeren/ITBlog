@@ -1,6 +1,7 @@
 ﻿using ITBlog.DataAccess.ContextFolder;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -87,10 +88,12 @@ namespace ITBlog.DataAccess.RepositoryFolder
                 {
                     return 0;
                 }
+
+                this._iTBlogContext.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 this._iTBlogContext.SaveChanges();
                 return 1;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return 0;
             }
@@ -161,7 +164,7 @@ namespace ITBlog.DataAccess.RepositoryFolder
         /// <summary>
         /// Set Entities
         /// </summary>
-        protected virtual Microsoft.EntityFrameworkCore.DbSet<T> Entities
+        protected virtual DbSet<T> Entities
         {
             get
             {
@@ -188,7 +191,7 @@ namespace ITBlog.DataAccess.RepositoryFolder
                     var splittedInclude = includedProperties.Split('|');
                     foreach (var item in splittedInclude)
                     {
-                        resultEntities.Include(item);
+                        resultEntities.Include(item).ToList().AsQueryable();
                     }
 
                     return resultEntities.ToList();
@@ -230,7 +233,6 @@ namespace ITBlog.DataAccess.RepositoryFolder
                 return this.Entities.Where(predicate).ToList();
             }
         }
-
         #endregion
 
     }

@@ -36,5 +36,18 @@ namespace ITBlog.Business.PlaceServiceFolder
 
             return placeModel;
         }
+
+        public List<PlaceDTO> GetPlaceList()
+        {
+            var placeList = new List<PlaceDTO>();
+            var list = _placeRepository.Query(x => x.IsActive && !x.IsDeleted, string.Empty).ToList();
+
+            if (list != null)
+            {
+                placeList = _mapper.Map<List<PlaceDTO>>(list);
+            }
+
+            return placeList;
+        }
     }
 }

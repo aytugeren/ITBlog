@@ -10,5 +10,7 @@ namespace ITBlog.Business.PlaceServiceFolder
     public interface IPlaceService
     {
         PlaceDTO GetPlaceByName(string placeName);
+
+        List<PlaceDTO> GetPlaceList();
     }
 }

@@ -2,6 +2,7 @@
 using ITBlog.Business.DTO;
 using ITBlog.DataAccess.RepositoryFolder;
 using ITBlog.Entities.Concrete.AuthorFolder;
+using ITBlog.Extension.AuthenticationExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,41 @@ namespace ITBlog.Business.AuthorServiceFolder
         {
             _authorRepository = authorRepository;
             _mapper = mapper;
+        }
+
+        public bool CheckAuthor(AuthorDTO author, string saltPassword)
+        {
+            bool isAuthorAcceptable = false;
+
+            if (author == null || author == default(AuthorDTO)) 
+            {
+                return isAuthorAcceptable;
+            }
+
+            if (!string.IsNullOrEmpty(author.Email))
+            {
+                var password = this.HashAlgorithm(saltPassword, author.Password);
+                var authorResult = _authorRepository.Query(x => x.Email == author.Email, string.Empty).FirstOrDefault();
+                if (authorResult != null)
+                {
+                    isAuthorAcceptable = password == authorResult.Password;
+                }
+            }
+
+            return isAuthorAcceptable;
+        }
+
+        public AuthorDTO GetAuthorByEmail(string email)
+        {
+            var model = new AuthorDTO();
+            var author = _authorRepository.Query(x => x.Email == email, string.Empty).FirstOrDefault();
+
+            if (author != null)
+            {
+                return _mapper.Map<AuthorDTO>(author);
+            }
+
+            return _mapper.Map<AuthorDTO>(model);
         }
 
         public AuthorDTO GetAuthorById(Guid id)
@@ -41,6 +77,26 @@ namespace ITBlog.Business.AuthorServiceFolder
             }
 
             return default(AuthorDTO);
+        }
+
+        public bool InsertAuthor(AuthorDTO author)
+        {
+            try
+            {
+                _authorRepository.Insert(_mapper.Map<Author>(author));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private string HashAlgorithm(string saltPassowrd, string password)
+        {
+            HashingAlgorithm hashing = new HashingAlgorithm(saltPassowrd);
+            var resultOfDTO = hashing.GenerateSaltedHash(password);
+            return resultOfDTO;
         }
     }
 }

@@ -1,0 +1,97 @@
+﻿@using ITBlog.Business.DTO;
+@model List<CategoryDTO>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    int counter = 1;
+}
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <!-- /# row -->
+            <section id="main-content">
+                <div class="row">
+                    <!-- /# column -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Kataloglar </h4>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Kategori Adı</th>
+                                                <th>Üst Kategori</th>
+                                                <th>Kategori Konumu</th>
+                                                <th>Kategori Seo Name</th>
+                                                <th>Kategori Base Url</th>
+                                                <th>Oluşturulma Tarihi</th>
+                                                <th>Güncelleme Tarihi</th>
+                                                <th>Aktiflik Durumu</th>
+                                                <th>Düzenleme</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                foreach (var category in Model)
+                                                {
+                                                    <tr>
+                                                        <th scope="row">@counter</th>
+                                                        <td>@category.CategoryName</td>
+                                                        @if (category.ParentCategoryId != null)
+                                                        {
+                                                            <td>@Model.FirstOrDefault(x => x.Id == category.ParentCategoryId)?.CategoryName</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>@string.Empty</td>
+                                                        }
+                                                        <td>
+                                                            @string.Join(',',category.Places.Select(x => x.Place.PlaceName).ToArray())
+                                                        </td>
+                                                        <td>@category.CategorySeoName</td>
+                                                        <td>@category.CategoryUrl</td>
+                                                        <td>@category.CreatedDateTime.ToString("dd-MMMM-yyyy")</td>
+                                                        <td>@category.UpdatedDateTime?.ToString("dd-MMMM-yyyy")</td>
+                                                        @if (category.IsActive && !category.IsDeleted)
+                                                        {
+                                                            <td>Aktif</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>Pasif</td>
+
+                                                        }
+                                                        <td>
+                                                            <a class="btn btn-dark btn-rounded m-b-10 m-l-5" href="/Catalog/GetCategoryInfoById/@category.Id.ToString()"><i class="ti-pencil"></i></a>
+                                                            <a class="btn btn-danger btn-rounded m-b-10 m-l-5" href="/Catalog/RemoveCategory/@category.Id.ToString()"><i class="ti-close"></i></a>
+                                                        </td>
+                                                    </tr>
+
+                                                    counter++;
+                                                }
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a class="btn btn-success m-b-10 m-l-5" href="/Catalog/GetCategoryInfoById/@Guid.Empty.ToString()">Yeni Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+            </section>
+        </div>
+    </div>
+</div>
