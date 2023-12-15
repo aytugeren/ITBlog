@@ -82,5 +82,11 @@ namespace ITBlog.Admin.MVC.Controllers.Picture
             _pictureService.RemovePicture(id);
             return Redirect("/Picture/Index");
         }
+
+        [HttpPost]
+        public IActionResult UploadPicture(IFormFile formFile)
+        {
+            return View();
+        }
     }
 }

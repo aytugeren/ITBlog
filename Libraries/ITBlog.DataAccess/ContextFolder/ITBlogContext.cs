@@ -27,6 +27,7 @@ namespace ITBlog.DataAccess.ContextFolder
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-TI3NI16\SQLEXPRESS;Database=ITBlog;Trusted_Connection=True;");
+            optionsBuilder.EnableSensitiveDataLogging(true);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

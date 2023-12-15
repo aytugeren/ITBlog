@@ -128,6 +128,7 @@ namespace ITBlog.DataAccess.RepositoryFolder
                 if (entity == null)
                     throw new ArgumentNullException("Entity is null!");
                 this.Entities.Remove(entity);
+                this._iTBlogContext.Entry(entity).State = EntityState.Deleted;
                 this._iTBlogContext.SaveChanges();
             }
             catch (Exception)

@@ -1,0 +1,144 @@
+﻿@using ITBlog.Admin.MVC.Models
+@model CategoryPostEditModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@if (Model != null && Model.Post != null && Model.Post.Id != Guid.Empty)
+{
+    <div class="card">
+        <div class="card-title">
+            <h4>@Model.Post.Title Güncelleme</h4>
+
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post" action="/Post/SubmitPost">
+                    <input type="text" class="form-control hidden" placeholder="Id" value="@Model.Post.Id.ToString()" name="Id">
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" class="form-control" placeholder="Başlık" value="@Html.Raw(Model.Post.Title)" name="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Özet</label>
+                        <textarea name="FirstContent">@Html.Raw(Model.Post.FirstContent)</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>İçerik</label>
+                        <textarea name="SecondContent">@Html.Raw(Model.Post.SecondContent)</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategori Konumu :</label>
+                        <select class="form-control" id="postCategory" onchange="addPostCategory('@Model.Post.Id')">
+                            <option>Seçiniz...</option>
+                            @foreach (var item in Model.Category.Where(x => !Model.Post.Categories.Select(y => y.CategoryId).Contains(x.Id)))
+                            {
+                                if (Model.Category.Where(x => !Model.Post.Categories.Select(y => y.CategoryId).Contains(x.Id)).Count() == 0)
+                                {
+                                    <option disabled>Seçilecek Bir Konum Kalmadı!</option>
+                                }
+
+                                <option value="@item.Id">@item.CategoryName</option>
+                            }
+                        </select>
+
+                        <br>
+
+                        @foreach (var item in Model.Post.Categories)
+                        {
+                            <button type="button" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><a href="/Post/RemoveCategoryMapping?categoryId=@item.CategoryId&postId=@item.PostId"><i class="ti-close"></i></a>@item.Category.CategoryName</button>
+                        }
+                        <p>@ViewData["ErrorMessage"]</p>
+
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-title">
+            <h4>Yeni Yazı Ekleme</h4>
+
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post" action="/Post/SubmitPost">
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" class="form-control" placeholder="Başlık" name="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Özet</label>
+                        <textarea name="FirstContent"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>İçerik</label>
+                        <textarea name="SecondContent"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategori Konumu :</label>
+                        <select class="form-control" id="postCategory" onchange="addPostCategory('@Model.Post.Id')">
+                            <option>Seçiniz...</option>
+                            @if (Model.Post != null && Model.Post.Id != Guid.Empty)
+                            {
+                                @foreach (var item in Model.Category.Where(x => !Model.Post.Categories.Select(y => y.CategoryId).Contains(x.Id)))
+                                {
+                                    if (Model.Category.Where(x => !Model.Post.Categories.Select(y => y.CategoryId).Contains(x.Id)).Count() == 0)
+                                    {
+                                        <option disabled>Seçilecek Bir Konum Kalmadı!</option>
+                                    }
+                                    <option value="@item.Id">@item.CategoryName</option>
+                                }
+                            }
+                            else
+                            {
+                                @foreach (var item in Model.Category)
+                                {
+                                    <option value="@item.Id">@item.CategoryName</option>
+                                }
+                            }
+                        </select>
+
+                        <br>
+
+                        @if (Model.Post != null && Model.Post.Id != Guid.Empty)
+                        {
+                            @foreach (var item in Model.Post.Categories)
+                            {
+                                <button type="button" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><a href="/Post/RemoveCategoryMapping?categoryId=@item.CategoryId&postId=@item.PostId"><i class="ti-close"></i></a>@item.Category.CategoryName</button>
+                            }
+                        }
+
+                        <p>@ViewData["ErrorMessage"]</p>
+
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+<script>
+    function addPostCategory(postId) {
+        var option = document.getElementById("postCategory").value;
+        var url = "/Post/AddCategoryPost?postId=" + postId + "&categoryId=" + option; // Controller ve Action adınızı buraya ekleyin
+
+        fetch(url, {
+            method: "GET"
+        })
+            .then(response => {
+                location.reload();
+            })
+            .catch(error => {
+                // İstek hata ile sonuçlandığında burada işlem yapabilirsiniz.
+                console.error('Hata oluştu:', error);
+            });
+    }
+</script>

@@ -1,4 +1,5 @@
 ﻿using ITBlog.Business.DTO;
+using ITBlog.Business.DTO.MappingDTOs;
 using ITBlog.Business.DTO.ViewDTOs;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,15 @@ namespace ITBlog.Business.PostServiceFolder
         List<PostDTO> GetPostsByDeterminedDayBefore(int dayBefore);
 
         List<PostDTO> GetPostsBySearchText(string searchText);
+
+        List<PostDTO> GetPostsByAuthorId(Guid id);
+
+        bool SubmitPost(PostDTO postDTO);
+
+        PostCategoryDTO GetPostCategoryDTO(Guid categoryId, Guid postId);
+
+        bool RemovePostCategoryMapping(Guid categoryId, Guid postId);
+
+        bool AddUpdatePostCategoryMapping(Guid categoryId, Guid postId);
     }
 }

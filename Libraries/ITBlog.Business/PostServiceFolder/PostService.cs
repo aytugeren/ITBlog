@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ITBlog.Business.DTO;
+using ITBlog.Business.DTO.MappingDTOs;
 using ITBlog.Business.DTO.ViewDTOs;
 using ITBlog.DataAccess.RepositoryFolder;
 using ITBlog.Entities.Concrete.PictureFolder;
@@ -22,11 +23,12 @@ namespace ITBlog.Business.PostServiceFolder
         private readonly IRepository<PostCategory> _postCategoryRepository;
         private readonly IMapper _mapper;
 
-        public PostService(IRepository<Post> postRepository, IRepository<PostPlace> postPlaceRepository, IRepository<Picture> pictureRepository, IMapper mapper)
+        public PostService(IRepository<Post> postRepository, IRepository<PostPlace> postPlaceRepository, IRepository<Picture> pictureRepository, IRepository<PostCategory> postCategoryRepository, IMapper mapper)
         {
             _postRepository = postRepository;
             _postPlaceRepository = postPlaceRepository;
             _pictureRepository = pictureRepository;
+            _postCategoryRepository = postCategoryRepository;
             _mapper = mapper;
         }
 
@@ -158,6 +160,115 @@ namespace ITBlog.Business.PostServiceFolder
             var posts = _postRepository.Query(x => x.SecondContent.Contains(searchText) || x.FirstContent.Contains(searchText), "Author|Comments");
 
             return _mapper.Map<List<PostDTO>>(posts);
+        }
+
+        public List<PostDTO> GetPostsByAuthorId(Guid id)
+        {
+            var posts = _postRepository.Query(x => x.AuthorId == id, "Author|Categories|Pictures|Places|Comments");
+
+            return _mapper.Map<List<PostDTO>>(posts);
+        }
+
+        public bool SubmitPost(PostDTO postDTO)
+        {
+            if (postDTO == null)
+            {
+                return false;
+            }
+
+            var postEntity = new Post();
+
+            bool isUpdate = postDTO.Id != Guid.Empty;
+            DateTime createdTime = DateTime.Now;
+            if (isUpdate)
+            {
+                var post = _postRepository.GetById(postDTO.Id);
+                createdTime = post.CreatedDateTime;
+            }
+
+            postEntity.Id = isUpdate ? postDTO.Id : Guid.NewGuid();
+            postEntity.Title = postDTO.Title;
+            postEntity.FirstContent = postDTO.FirstContent;
+            postEntity.SecondContent = postDTO.SecondContent;
+            postEntity.AuthorId = postDTO.AuthorId;
+            postEntity.IsActive = true;
+            postEntity.IsDeleted = false;
+
+            if (isUpdate)
+            {
+                postEntity.UpdatedDateTime = DateTime.Now;
+                postEntity.CreatedDateTime = createdTime;
+                _postRepository.Update(postEntity);
+            }
+            else
+            {
+                postEntity.CreatedDateTime = DateTime.Now;
+                _postRepository.Insert(postEntity);
+            }
+
+            return true;
+        }
+
+        public PostCategoryDTO GetPostCategoryDTO(Guid categoryId, Guid postId)
+        {
+            var result = _postCategoryRepository.Query(x => x.CategoryId == categoryId && x.PostId == postId, string.Empty);
+
+            if (result == null || !result.Any())
+            {
+                return new PostCategoryDTO();
+            }
+
+            return _mapper.Map<PostCategoryDTO>(result.FirstOrDefault());
+        }
+
+        public bool RemovePostCategoryMapping(Guid categoryId, Guid postId)
+        {
+            try
+            {
+                var result = _postCategoryRepository.Query(x => x.CategoryId == categoryId && x.PostId == postId, string.Empty).FirstOrDefault();
+
+                if (result != default(PostCategory))
+                {
+                    _postCategoryRepository.Delete(result);
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool AddUpdatePostCategoryMapping(Guid categoryId, Guid postId)
+        {
+            try
+            {
+                var result = this.GetPostCategoryDTO(categoryId, postId);
+
+                if (result != null && result.Id != Guid.Empty)
+                {
+                    return false;
+                }
+
+                var model = new PostCategory()
+                {
+                    CategoryId = categoryId,
+                    PostId = postId,
+                    CreatedDateTime = DateTime.Now,
+                    IsActive = true,
+                    IsDeleted = false,
+                    Id = Guid.NewGuid(),
+                };
+
+                _postCategoryRepository.Insert(model);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

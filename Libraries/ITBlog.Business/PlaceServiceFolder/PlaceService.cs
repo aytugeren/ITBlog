@@ -21,6 +21,20 @@ namespace ITBlog.Business.PlaceServiceFolder
             _mapper = mapper;
         }
 
+        public PlaceDTO GetPlaceById(Guid id)
+        {
+            var place = new PlaceDTO();
+
+            if (id == Guid.Empty)
+            {
+                return place;
+            }
+
+            var entity = _placeRepository.GetById(id);
+
+            return _mapper.Map<PlaceDTO>(entity);
+        }
+
         public PlaceDTO GetPlaceByName(string placeName)
         {
             var placeModel = new PlaceDTO();
@@ -40,7 +54,7 @@ namespace ITBlog.Business.PlaceServiceFolder
         public List<PlaceDTO> GetPlaceList()
         {
             var placeList = new List<PlaceDTO>();
-            var list = _placeRepository.Query(x => x.IsActive && !x.IsDeleted, string.Empty).ToList();
+            var list = _placeRepository.Query(x => x.IsActive && !x.IsDeleted, "Posts|Categories").ToList();
 
             if (list != null)
             {
@@ -48,6 +62,43 @@ namespace ITBlog.Business.PlaceServiceFolder
             }
 
             return placeList;
+        }
+
+        public bool RemovePlace(Guid id)
+        {
+            if (id == Guid.Empty) { return false; }
+
+            var place = _placeRepository.GetById(id);
+            
+            if (place != null)
+            {
+                _placeRepository.Delete(place);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool SubmitPlace(PlaceDTO place, bool isUpdate)
+        {
+            try
+            {
+                if (isUpdate)
+                {
+                    _placeRepository.Update(_mapper.Map<Place>(place));
+                }
+                else
+                {
+                    _placeRepository.Insert(_mapper.Map<Place>(place));
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

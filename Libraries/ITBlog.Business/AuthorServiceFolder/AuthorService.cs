@@ -47,7 +47,7 @@ namespace ITBlog.Business.AuthorServiceFolder
         public AuthorDTO GetAuthorByEmail(string email)
         {
             var model = new AuthorDTO();
-            var author = _authorRepository.Query(x => x.Email == email, string.Empty).FirstOrDefault();
+            var author = _authorRepository.Query(x => x.Email == email, "Skills").FirstOrDefault();
 
             if (author != null)
             {
@@ -59,7 +59,7 @@ namespace ITBlog.Business.AuthorServiceFolder
 
         public AuthorDTO GetAuthorById(Guid id)
         {
-            var author = _authorRepository.GetById(id);
+            var author = _authorRepository.Query(x => x.Id == id, "Skills|Posts|SocialMedias").FirstOrDefault();
             if (author != null)
             {
                 return _mapper.Map<AuthorDTO>(author);

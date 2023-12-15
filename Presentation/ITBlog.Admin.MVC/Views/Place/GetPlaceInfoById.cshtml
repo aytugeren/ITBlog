@@ -1,0 +1,60 @@
+﻿@using ITBlog.Business.DTO;
+@model PlaceDTO
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@if (Model != null)
+{
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-title">
+                <h4>@Model.PlaceName Alanı Editleme</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/Place/SubmitPlace" method="post">
+                        <div class="form-group hidden">
+                            <p class="text-muted m-b-15 f-s-12"><b>Place Id :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Place Id" value="@Model.Id" name="PlaceId">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12"><b>Alan Adı :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Alan Adı" value="@Model.PlaceName" name="PlaceName">
+                        </div>
+                        <button type="submit" class="btn btn-success m-b-10 m-l-5">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-title">
+                <h4>Yeni Alan Ekleme</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/Catalog/SubmitCategory" method="post">
+                        <div class="form-group hidden">
+                            <p class="text-muted m-b-15 f-s-12"><b>Place Id :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Alan Id" value="" name="PlaceId">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12"><b>Alan Adı :</b></p>
+                            <input type="text" class="form-control input-default " placeholder="Alan Adı" value="" name="PlaceName">
+                        </div>
+                        <button type="submit" class="btn btn-success m-b-10 m-l-5">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

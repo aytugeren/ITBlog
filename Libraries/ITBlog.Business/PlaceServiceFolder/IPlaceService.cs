@@ -11,6 +11,13 @@ namespace ITBlog.Business.PlaceServiceFolder
     {
         PlaceDTO GetPlaceByName(string placeName);
 
+        PlaceDTO GetPlaceById(Guid id);
+
         List<PlaceDTO> GetPlaceList();
+        
+        bool SubmitPlace(PlaceDTO place, bool isUpdate);
+
+        bool RemovePlace(Guid id);
+
     }
 }

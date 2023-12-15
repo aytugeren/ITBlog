@@ -20,6 +20,7 @@ namespace ITBlog.Admin.MVC.Controllers.Author
             return View();
         }
 
+        [HttpGet]
         public IActionResult GetAuthorInfosById(Guid id)
         {
             var authorInfo = _authorService.GetAuthorById(id);

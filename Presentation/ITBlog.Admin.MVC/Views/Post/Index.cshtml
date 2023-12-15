@@ -1,0 +1,68 @@
+﻿@using ITBlog.Business.DTO;
+@model List<PostDTO>;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var counter = 1;
+}
+<div class="card">
+    <div class="card-title">
+        <h4>Yazı Yönetimi </h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover ">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>İlk İçerik</th>
+                        <th>İkinci İçerik</th>
+                        <th>Yazar Ad-Soyad</th>
+                        <th>Oluşturulma Tarihi</th>
+                        <th>Düzenleme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var post in Model)
+                    {
+                        <tr>
+                            <th scope="row">@counter</th>
+                            <td>@post.Title</td>
+                            @if (post.FirstContent.Length > 35)
+                            {
+                                <td style="color:darkred">İçerik Uzun Olduğundan Dolayı Gösterilemiyor..</td>
+                            }
+                            else
+                            {
+                                <td>@Html.Raw(post.FirstContent)</td>
+                            }
+
+                            @if (post.SecondContent.Length > 35)
+                            {
+                                <td style="color:darkred">İçerik Uzun Olduğundan Dolayı Gösterilemiyor..</td>
+                            }
+                            else
+                            {
+                                <td>@Html.Raw(post.SecondContent)</td>
+                            }
+                            <td>@post.Author.AuthorName @post.Author.AuthorLastName</td>
+                            <td>@post.CreatedDateTime.ToString("dd-MM-yyyy hh:MM")</td>
+                            <td>
+                                <a class="btn btn-dark btn-rounded m-b-10 m-l-5" href="/Post/GetPostInfoById/@post.Id.ToString()"><i class="ti-pencil"></i></a>
+                                <a class="btn btn-danger btn-rounded m-b-10 m-l-5" href="/Post/RemovePost/@post.Id.ToString()"><i class="ti-close"></i></a>
+                            </td>
+                        </tr>
+
+                        counter++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-success m-b-10 m-l-5" href="/Post/GetPostInfoById/@Guid.Empty.ToString()">Yeni Ekle</a>
+    </div>
+</div>

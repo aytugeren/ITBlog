@@ -1,4 +1,6 @@
-﻿@model List<ITBlog.Business.DTO.ViewDTOs.IndexViewDTOS>
+﻿@using ITBlog.Extension.HelperExtensions
+@model List<ITBlog.Business.DTO.ViewDTOs.IndexViewDTOS>
+
 @{
 }
 
@@ -19,16 +21,24 @@
                         </div>
                         <div class="col ps-3">
                             <div class="entry-title">
-                                @if (post.Post.FirstContent.Length > 20){
-                                    <h4><a href="Post/GetPostById/@post.Post.Id">@post.Post.FirstContent.Substring(0,20)...</a></h4>
+                                @if (post.Post.FirstContent.Length > 20)
+                                {
+                                    <h4><a href="Post/GetPostById/@post.Post.Id">@post.Post.FirstContent.RemoveHtmlTags().Substring(0,30)...</a></h4>
                                 }
                                 else{
-                                    <h4><a href="Post/GetPostById/@post.Post.Id">@post.Post.FirstContent</a></h4>
+                                    <h4><a href="Post/GetPostById/@post.Post.Id">@post.Post.FirstContent.RemoveHtmlTags()</a></h4>
                                 }
                             </div>
                             <div class="entry-meta">
                                 <ul>
-                                    <li>@post.Post.CreatedDateTime</li>
+                                    @if (post.Post.UpdatedDateTime != null)
+                                    {
+                                        <li>@post.Post.UpdatedDateTime</li>
+                                    }
+                                    else
+                                    {
+                                        <li>@post.Post.CreatedDateTime</li>
+                                    }
                                 </ul>
                             </div>
                         </div>

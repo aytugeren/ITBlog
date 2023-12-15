@@ -14,13 +14,10 @@
 }
 <div class="card-body">
     <a class="btn btn-success m-b-10 m-l-5" href="/Picture/GetPictureDetailById/@Guid.Empty.ToString()">Yeni Ekle</a>
-</div>
+
 <div class="row">
-
-
     @if (Model != null)
     {
-
         @foreach (var picture in Model)
         {
             <div class="col-lg-4">
@@ -84,4 +81,5 @@
     {
         <span class="alert alert-warning">Görsel Bulunamadı Lütfen ekleyiniz!</span>
     }
+</div>
 </div>

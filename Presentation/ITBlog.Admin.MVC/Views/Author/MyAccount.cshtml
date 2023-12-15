@@ -17,38 +17,17 @@
                 </span>
             </div>
         }
-        else{
-        <div class="header-icon" data-toggle="dropdown">
-            <span class="user-avatar">
-                @Model.AuthorName @Model.AuthorLastName
-                <i class="ti-angle-down f-s-10"></i>
-            </span>
-            <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
-                <div class="dropdown-content-body">
-                    <ul>
-                        <li>
-                            <a href="/Author/GetAuthorInfosById/@Model.Id.ToString()">
-                                <i class="ti-user"></i>
-                                <span>Profil</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="ti-settings"></i>
-                                <span>Ayarlar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="ti-power-off"></i>
-                                <span>Çıkış Yap</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        else
+        {
+            <div class="header-icon">
+                <a href="/Author/GetAuthorInfosById/@Model.Id">
+                    <i class="ti-user"></i>
+                    <span class="user-avatar">
+                        @Model.AuthorName @Model.AuthorLastName
+                    </span>
+                </a>
             </div>
-        </div>
         }
-        
+
     </div>
 </div>

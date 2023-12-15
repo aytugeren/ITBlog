@@ -4,6 +4,7 @@ using ITBlog.Business.AutoMapperFolder;
 using ITBlog.Business.CategoryServiceFolder;
 using ITBlog.Business.PictureServiceFolder;
 using ITBlog.Business.PlaceServiceFolder;
+using ITBlog.Business.PostServiceFolder;
 using ITBlog.DataAccess.ContextFolder;
 using ITBlog.DataAccess.RepositoryFolder;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -24,6 +25,8 @@ builder.Services.AddTransient<IAuthorService, AuthorService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IPlaceService, PlaceService>();
 builder.Services.AddTransient<IPictureService, PictureService>();
+builder.Services.AddTransient<IPostService, PostService>();
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
